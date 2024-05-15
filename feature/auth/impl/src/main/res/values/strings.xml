@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="event_finder">Event Finder</string>
+    <string name="username">Username</string>
+    <string name="city">City</string>
+    <string name="already_have_an_account_btn">Already have an account? Sign In</string>
+    <string name="don_t_have_an_account_btn">Don\'t have an account? Sign Up</string>
+    <string name="sign_in_screen">Sign In Screen</string>
+    <string name="sign_up_screen">Sign Up Screen</string>
+</resources>
