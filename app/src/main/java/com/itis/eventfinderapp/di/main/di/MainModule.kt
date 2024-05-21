@@ -27,8 +27,7 @@ class MainModule {
     }
 
     @Provides
-    @IntoMap
-    @ViewModelKey(MainViewModel::class)
+    @[IntoMap ViewModelKey(MainViewModel::class)]
     fun provideViewModel(preferencesImpl: PreferencesImpl): ViewModel {
         return MainViewModel(preferencesImpl)
     }

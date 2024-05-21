@@ -6,8 +6,12 @@ interface UsersAuthRouter {
     fun openSignInFromSignUp()
 
     fun openSignUpFromInitial()
+
     fun openSignInFromInitial()
 
-//    fun openSignUpFromSplashScreen()
     fun openInitialFromSplashScreen()
+
+    fun openEventsScreenFromSignIn()
+
+    fun openEventsScreenFromSplashScreen()
 }

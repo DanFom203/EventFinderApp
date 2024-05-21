@@ -36,7 +36,7 @@ class SignInFragment : BaseFragment<SignInViewModel>(R.layout.fragment_sign_in) 
             when (result) {
                 is AsyncResult.Success -> {
                     viewModel.initializeUser()
-//                    viewModel.openPrediction()
+                    viewModel.openEventsScreen()
                 }
 
                 is AsyncResult.Error -> {

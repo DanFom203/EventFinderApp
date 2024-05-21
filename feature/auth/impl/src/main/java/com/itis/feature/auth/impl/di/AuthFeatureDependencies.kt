@@ -8,5 +8,6 @@ interface AuthFeatureDependencies {
     fun resourceManager(): ResourceManager
 
     fun coroutineDispatcher(): CoroutineDispatcher
+
     fun preferences(): Preferences
 }

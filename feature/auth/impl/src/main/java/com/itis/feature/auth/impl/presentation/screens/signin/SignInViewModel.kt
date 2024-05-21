@@ -36,10 +36,10 @@ class SignInViewModel(
     fun openSignUp(){
         router.openSignUpFromSignIn()
     }
-//
-//    fun openPrediction(){
-//        router.openPredictionFromSignIn()
-//    }
+
+    fun openEventsScreen(){
+        router.openEventsScreenFromSignIn()
+    }
 
     fun initializeUser(){
         preferencesImpl.saveAuthStatus(true)

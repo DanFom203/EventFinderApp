@@ -2,7 +2,7 @@ package com.itis.eventfinderapp.di.main
 
 import android.view.View
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -12,7 +12,6 @@ import com.itis.common.utils.AsyncResult
 import com.itis.eventfinderapp.R
 import com.itis.eventfinderapp.databinding.ActivityMainBinding
 import com.itis.eventfinderapp.di.deps.findComponentDependencies
-import com.itis.eventfinderapp.di.deps.findComponentDependenciesProvider
 import com.itis.eventfinderapp.di.main.di.MainComponent
 import com.itis.eventfinderapp.navigation.Navigator
 import javax.inject.Inject
@@ -21,9 +20,8 @@ class MainActivity : BaseActivity<MainViewModel>(){
 
     @Inject lateinit var navigator: Navigator
 
-    private var navController: NavController? = null
     private val viewBinding: ActivityMainBinding by viewBinding(ActivityMainBinding::bind)
-
+    private var controller: NavController? = null
 
     override fun inject() {
         MainComponent.init(this, findComponentDependencies())
@@ -35,13 +33,15 @@ class MainActivity : BaseActivity<MainViewModel>(){
     }
 
     override fun initViews() {
-        navController = Navigation.findNavController(this, R.id.navigation_host_fragment)
-        navigator.attachNavController(navController!!, R.navigation.nav_graph)
+        controller =
+            (supportFragmentManager.findFragmentById(R.id.main_activity_container) as NavHostFragment)
+                .navController
+        navigator.attachNavController(this.controller!!, R.navigation.nav_graph)
         findViewById<BottomNavigationView>(R.id.menu_bnv).apply {
-            setupWithNavController(navController!!)
+            setupWithNavController(this@MainActivity.controller!!)
         }
         viewBinding.menuBnv.setOnItemSelectedListener { item ->
-            NavigationUI.onNavDestinationSelected(item, navController!!)
+            NavigationUI.onNavDestinationSelected(item, this.controller!!)
             return@setOnItemSelectedListener true
         }
 
@@ -72,7 +72,7 @@ class MainActivity : BaseActivity<MainViewModel>(){
 
     override fun onDestroy() {
         super.onDestroy()
-        navController?.let {
+        controller?.let {
             navigator.detachNavController(it)
         }
     }

@@ -35,7 +35,6 @@ class ApiNetworkModule {
             .writeTimeout(networkProperties.writeTimeout, TimeUnit.SECONDS)
             .readTimeout(networkProperties.readTimeout, TimeUnit.SECONDS)
             .retryOnConnectionFailure(true)
-//            .addInterceptor(TokenInterceptor())
 
         if (BuildConfig.DEBUG) {
             clientBuilder.addInterceptor(HttpLoggingInterceptor().apply {

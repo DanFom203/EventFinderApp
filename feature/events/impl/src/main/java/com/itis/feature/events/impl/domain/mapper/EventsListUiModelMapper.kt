@@ -17,8 +17,6 @@ class EventsListUiModelMapper @Inject constructor() {
                     endDate = eventData.endDate,
                     title = eventData.title,
                     description = eventData.description,
-                    ageRestriction = eventData.ageRestriction,
-                    isFree = eventData.isFree,
                     imageUrl = eventData.imageUrl,
                     favoritesCount = eventData.favoritesCount,
                     commentsCount = eventData.commentsCount

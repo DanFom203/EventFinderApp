@@ -44,6 +44,9 @@ dependencies {
     api(project(":common"))
     api(project(":feature:auth:api"))
     api(project(":feature:auth:impl"))
+    api(project(":feature:events:api"))
+    api(project(":feature:events:impl"))
+    api(project(":feature:kudago:api"))
     //dagger2
     implementation(libs.dagger)
     implementation(libs.firebase.auth)
@@ -59,11 +62,11 @@ dependencies {
     //firebase
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
+    //loggingInterceptor
+    implementation(libs.logging.interceptor)
 
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
-
-    implementation(libs.kotlin.stdlib.jdk7)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

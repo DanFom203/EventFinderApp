@@ -29,8 +29,7 @@ class SignInModule {
     }
 
     @Provides
-    @IntoMap
-    @ViewModelKey(SignInViewModel::class)
+    @[IntoMap ViewModelKey(SignInViewModel::class)]
     fun provideRegisterViewModel(
         useCase: SignInUseCase,
         router: UsersAuthRouter,

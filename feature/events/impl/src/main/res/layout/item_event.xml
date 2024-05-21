@@ -7,6 +7,7 @@
     android:layout_marginHorizontal="16dp"
     android:layout_marginTop="8dp"
     android:background="@color/white"
+    android:theme="@style/Theme.MaterialComponents.DayNight"
     app:cardCornerRadius="8dp"
     app:cardElevation="16dp">
 
@@ -24,8 +25,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:src="@drawable/placeholder_loading" />
+            android:layout_marginBottom="16dp" />
 
         <TextView
             android:id="@+id/textViewEventTitle"
@@ -34,7 +34,7 @@
             android:text="@string/event_title"
             android:background="@color/lightYellow"
             android:textSize="20sp"
-            android:textColor="@color/black"
+            android:textStyle="bold"
             android:fontFamily="@font/ibm_plex_mono_medium"
             app:layout_constraintStart_toEndOf="@id/event_iv"
             app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:text="@string/event_description"
             android:textSize="14sp"
-            android:maxLines="1"
+            android:maxLines="2"
             android:ellipsize="end"
             android:fontFamily="@font/ibm_plex_mono"
             app:layout_constraintStart_toStartOf="@id/textViewEventTitle"
@@ -62,7 +62,6 @@
             android:layout_height="wrap_content"
             android:text="@string/start_date"
             android:textSize="12sp"
-            android:textColor="@color/black"
             android:fontFamily="@font/ibm_plex_mono"
             app:layout_constraintStart_toStartOf="@id/event_description_tv"
             app:layout_constraintTop_toBottomOf="@id/event_description_tv"
@@ -86,7 +85,6 @@
             android:layout_height="wrap_content"
             android:text="@string/end_date"
             android:textSize="12sp"
-            android:textColor="@color/black"
             android:fontFamily="@font/ibm_plex_mono"
             app:layout_constraintStart_toStartOf="@id/start_date_label_tv"
             app:layout_constraintTop_toBottomOf="@id/start_date_tv"

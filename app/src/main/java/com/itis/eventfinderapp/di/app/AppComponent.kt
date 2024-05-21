@@ -9,6 +9,7 @@ import com.itis.eventfinderapp.App
 import com.itis.eventfinderapp.di.deps.ComponentDependenciesModule
 import com.itis.eventfinderapp.di.deps.ComponentHolderModule
 import com.itis.eventfinderapp.di.main.di.MainDependencies
+import com.itis.feature.kudago.api.di.ApiNetworkModule
 import dagger.BindsInstance
 import dagger.Component
 
@@ -18,7 +19,7 @@ import dagger.Component
         AppModule::class,
         CommonModule::class,
         NetworkModule::class,
-//        ApiNetworkModule::class,
+        ApiNetworkModule::class,
         PreferencesModule::class,
         NavigationModule::class,
         ComponentHolderModule::class,

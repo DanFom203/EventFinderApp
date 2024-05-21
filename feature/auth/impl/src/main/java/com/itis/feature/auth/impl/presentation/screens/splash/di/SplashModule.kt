@@ -27,8 +27,7 @@ class SplashModule {
     }
 
     @Provides
-    @IntoMap
-    @ViewModelKey(SplashScreenViewModel::class)
+    @[IntoMap ViewModelKey(SplashScreenViewModel::class)]
     fun provideRegisterViewModel(
         preferencesImpl: PreferencesImpl,
         router: UsersAuthRouter

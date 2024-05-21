@@ -33,7 +33,6 @@ interface AuthFeatureComponent : AuthFeatureApi {
     interface Builder {
         @BindsInstance
         fun context(context: Context): Builder
-
         @BindsInstance
         fun router(usersAuthRouter: UsersAuthRouter): Builder
         fun withDependencies(deps: AuthFeatureDependencies): Builder

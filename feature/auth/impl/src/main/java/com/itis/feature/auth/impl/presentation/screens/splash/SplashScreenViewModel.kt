@@ -26,7 +26,7 @@ class SplashScreenViewModel(
     fun openInitial(){
         router.openInitialFromSplashScreen()
     }
-//    fun openPredictions(){
-//        router.openPredictionFromSplashScreen()
-//    }
+    fun openEventsScreen(){
+        router.openEventsScreenFromSplashScreen()
+    }
 }

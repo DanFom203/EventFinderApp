@@ -14,12 +14,10 @@ class EventsListDomainModelMapper @Inject constructor() {
             it.events.forEach { eventData ->
                 val event = EventDomainModel(
                     id = eventData.id,
-                    startDate = eventData.dates.startDate,
-                    endDate = eventData.dates.endDate,
+                    startDate = eventData.dates[0].startDate,
+                    endDate = eventData.dates[0].endDate,
                     title = eventData.title,
                     description = eventData.description,
-                    ageRestriction = eventData.ageRestriction,
-                    isFree = eventData.isFree,
                     imageUrl = eventData.images[0].imageUrl,
                     favoritesCount = eventData.favoritesCount,
                     commentsCount = eventData.commentsCount

@@ -8,7 +8,6 @@ class DateFormatter {
 
     private val simpleDateFormat = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault())
     private val simpleDateTimeFormat = SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault())
-    private val ddMMMyyyyDateFormatter = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
     private val simpleTimeFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
 
     fun formatDate(date: Date): String {
@@ -21,5 +20,9 @@ class DateFormatter {
 
     fun formatTime(date: Date): String {
         return simpleTimeFormat.format(date)
+    }
+
+    fun formatEpochSecondsToDate(seconds: Long): Date {
+        return Date(seconds * 1000)  // Преобразование секунд в миллисекунды
     }
 }

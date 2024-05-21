@@ -3,8 +3,11 @@ package com.itis.eventfinderapp.navigation
 import androidx.navigation.NavController
 import com.itis.eventfinderapp.R
 import com.itis.feature.auth.impl.utils.UsersAuthRouter
+import com.itis.feature.events.impl.presentation.model.EventUiModel
+import com.itis.feature.events.impl.presentation.screens.event_info.EventInfoFragment
+import com.itis.feature.events.impl.utils.EventsFeatureRouter
 
-class Navigator : UsersAuthRouter {
+class Navigator : UsersAuthRouter, EventsFeatureRouter {
 
     private var navController: NavController? = null
 
@@ -36,5 +39,22 @@ class Navigator : UsersAuthRouter {
 
     override fun openInitialFromSplashScreen() {
         navController?.navigate(R.id.action_splashScreenFragment_to_initialFragment)
+    }
+
+    override fun openEventsScreenFromSignIn() {
+        navController?.navigate(R.id.action_signInFragment_to_eventsFragment)
+    }
+
+    override fun openEventsScreenFromSplashScreen() {
+        navController?.navigate(R.id.action_splashScreenFragment_to_eventsFragment)
+    }
+
+    override fun openEventInfoScreenFromEventsScreen(eventUiModel: EventUiModel) {
+        navController?.navigate(
+            R.id.action_eventsFragment_to_eventInfoFragment,
+            EventInfoFragment.createBundle(
+                eventId = eventUiModel.id
+            )
+        )
     }
 }

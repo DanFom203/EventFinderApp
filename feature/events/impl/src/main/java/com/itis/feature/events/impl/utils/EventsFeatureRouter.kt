@@ -1,5 +1,7 @@
 package com.itis.feature.events.impl.utils
 
-interface EventsFeatureRouter {
+import com.itis.feature.events.impl.presentation.model.EventUiModel
 
+interface EventsFeatureRouter {
+    fun openEventInfoScreenFromEventsScreen(eventUiModel: EventUiModel)
 }

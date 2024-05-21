@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:text="@string/event_finder"
         android:textSize="40sp"
+        android:background="@color/lightYellow"
         android:textStyle="bold"
         android:layout_marginBottom="60dp" />
 
@@ -19,6 +20,7 @@
         android:id="@+id/sign_in_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/darkYellow"
         android:text="@string/sign_in"
         android:layout_margin="16dp" />
 
@@ -26,6 +28,7 @@
         android:id="@+id/sign_up_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/darkYellow"
         android:layout_margin="16dp"
         android:text="@string/sign_up" />
 

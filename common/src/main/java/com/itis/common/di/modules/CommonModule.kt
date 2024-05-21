@@ -43,6 +43,6 @@ class CommonModule {
     }
 
     @Provides
-    fun provideCorutineDispatcher(): CoroutineDispatcher = Dispatchers.IO
+    fun provideCoroutineDispatcher(): CoroutineDispatcher = Dispatchers.IO
 
 }

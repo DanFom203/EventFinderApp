@@ -27,8 +27,7 @@ class InitialModule {
     }
 
     @Provides
-    @IntoMap
-    @ViewModelKey(InitialViewModel::class)
+    @[IntoMap ViewModelKey(InitialViewModel::class)]
     fun provideInitialViewModel(
         router: UsersAuthRouter
     ): ViewModel {

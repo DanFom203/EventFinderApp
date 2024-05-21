@@ -11,17 +11,13 @@ data class EventsListResponse(
 
 data class Event(
     @SerializedName("id")
-    val id: String,
+    val id: Int,
     @SerializedName("dates")
-    val dates: Dates,
+    val dates: List<Dates>,
     @SerializedName("title")
     val title: String,
     @SerializedName("description")
     val description: String,
-    @SerializedName("age_restriction")
-    val ageRestriction: String,
-    @SerializedName("is_free")
-    val isFree: Boolean,
     @SerializedName("images")
     val images: List<EventImage>,
     @SerializedName("favorites_count")

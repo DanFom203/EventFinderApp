@@ -6,13 +6,11 @@ data class EventsListUiModel(
 )
 
 data class EventUiModel(
-    val id: String,
+    val id: Int,
     val startDate: Long,
     val endDate: Long,
     val title: String,
     val description: String,
-    val ageRestriction: String,
-    val isFree: Boolean,
     val imageUrl: String,
     val favoritesCount: Int,
     val commentsCount: Int

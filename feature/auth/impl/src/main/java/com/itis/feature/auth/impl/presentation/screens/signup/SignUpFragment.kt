@@ -39,7 +39,6 @@ class SignUpFragment : BaseFragment<SignUpViewModel>(R.layout.fragment_sign_up) 
             when (result) {
                 is AsyncResult.Success -> {
                     viewModel.initializeUser()
-//                    viewModel.openPrediction()
                 }
 
                 is AsyncResult.Error -> {
