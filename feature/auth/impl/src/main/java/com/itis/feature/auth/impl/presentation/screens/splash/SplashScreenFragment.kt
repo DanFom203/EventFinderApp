@@ -17,7 +17,7 @@ class SplashScreenFragment: BaseFragment<SplashScreenViewModel>(R.layout.fragmen
     }
     override suspend fun subscribe(viewModel: SplashScreenViewModel) {
         viewModel.prefFlow.collect { result ->
-            if (result){
+            if (result.authStatus){
                 viewModel.openEventsScreen()
                 viewModel.setAuthStatus(false)
                 viewModel.setAuthStatus(true)

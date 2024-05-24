@@ -4,4 +4,6 @@ import com.itis.feature.events.impl.presentation.model.EventUiModel
 
 interface EventsFeatureRouter {
     fun openEventInfoScreenFromEventsScreen(eventUiModel: EventUiModel)
+
+    fun openEventsScreenFromEventInfoScreen()
 }

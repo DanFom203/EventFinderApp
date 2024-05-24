@@ -2,6 +2,7 @@ package com.itis.feature.auth.impl.data.repository
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
+import com.itis.common.storage.PreferencesImpl
 import com.itis.feature.auth.api.domain.model.User
 import com.itis.feature.auth.api.domain.repository.UserRepository
 import kotlinx.coroutines.tasks.await
@@ -12,6 +13,7 @@ import kotlin.coroutines.suspendCoroutine
 
 class UserRepositoryImpl @Inject constructor(
     private val auth: FirebaseAuth,
+    private val preferencesImpl: PreferencesImpl
 ) : UserRepository {
     override suspend fun createUser(
         username: String,
@@ -25,7 +27,7 @@ class UserRepositoryImpl @Inject constructor(
         return suspendCoroutine { continuation ->
             createUserTask.addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    // User account created & signed in
+                    // User account created
                     val user = auth.currentUser
                     val profileUpdates = UserProfileChangeRequest.Builder()
                         .setDisplayName(username)
@@ -39,7 +41,7 @@ class UserRepositoryImpl @Inject constructor(
                             }
                         }
                 } else {
-                    // Sign in failed
+                    // Sign up failed
                     continuation.resumeWithException(Exception("Error creating user: ${task.exception?.message}"))
                 }
             }
@@ -53,6 +55,7 @@ class UserRepositoryImpl @Inject constructor(
             signInTask.addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     val user = task.result?.user
+                    preferencesImpl.saveCurrentUserId(user?.uid ?: "")
                     val profileUpdates = UserProfileChangeRequest.Builder()
                         .setDisplayName(user?.displayName)
                         .build()

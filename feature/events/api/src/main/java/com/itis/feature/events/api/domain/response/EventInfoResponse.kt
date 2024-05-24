@@ -8,13 +8,15 @@ data class EventInfoResponse(
     @SerializedName("title")
     val title: String,
     @SerializedName("place")
-    val place: Place,
+    val place: Place? = null,
     @SerializedName("description")
     val description: String,
     @SerializedName("categories")
     val categories: List<String>,
     @SerializedName("age_restriction")
     val ageRestriction: String? = null,
+    @SerializedName("dates")
+    val dates: List<Dates>,
     @SerializedName("is_free")
     val isFree: Boolean,
     @SerializedName("images")

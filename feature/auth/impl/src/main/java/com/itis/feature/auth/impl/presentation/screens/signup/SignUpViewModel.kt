@@ -1,11 +1,10 @@
 package com.itis.feature.auth.impl.presentation.screens.signup
 
 import androidx.lifecycle.viewModelScope
-import com.itis.feature.auth.impl.presentation.model.SignUpForm
 import com.itis.common.base.BaseViewModel
-import com.itis.common.storage.PreferencesImpl
 import com.itis.common.utils.AsyncResult
 import com.itis.feature.auth.impl.domain.usecases.SignUpUseCase
+import com.itis.feature.auth.impl.presentation.model.SignUpForm
 import com.itis.feature.auth.impl.presentation.model.UserUiModel
 import com.itis.feature.auth.impl.utils.UsersAuthRouter
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -15,7 +14,6 @@ import kotlinx.coroutines.launch
 class SignUpViewModel(
     private val signUpUseCase: SignUpUseCase,
     private val router: UsersAuthRouter,
-    private val preferencesImpl: PreferencesImpl,
 ) : BaseViewModel() {
     private val _signUpFlow = MutableStateFlow<AsyncResult<UserUiModel>?>(null)
     val signUpFlow: StateFlow<AsyncResult<UserUiModel>?>
@@ -42,14 +40,6 @@ class SignUpViewModel(
 
     fun openSignIn(){
         router.openSignInFromSignUp()
-    }
-
-//    fun openPrediction(){
-//        router.openPredictionFromSignUp()
-//    }
-
-    fun initializeUser(){
-        preferencesImpl.saveAuthStatus(true)
     }
 
 }

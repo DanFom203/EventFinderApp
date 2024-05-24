@@ -1,5 +1,6 @@
 package com.itis.feature.events.impl.di
 
+import android.content.Context
 import com.itis.common.di.CommonApi
 import com.itis.common.di.scope.FeatureScope
 import com.itis.feature.events.api.di.EventsFeatureApi
@@ -23,6 +24,8 @@ interface EventsFeatureComponent: EventsFeatureApi {
 
     @Component.Builder
     interface Builder {
+        @BindsInstance
+        fun context(context: Context): Builder
         @BindsInstance
         fun api(pandasScoreApi: KudagoApi):Builder
         @BindsInstance

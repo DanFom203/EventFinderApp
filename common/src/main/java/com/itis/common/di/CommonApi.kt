@@ -4,6 +4,7 @@ import android.content.Context
 import com.itis.common.core.config.AppProperties
 import com.itis.common.core.preferences.Preferences
 import com.itis.common.core.resources.ResourceManager
+import com.itis.common.utils.CityFormatter
 import com.itis.common.utils.DateFormatter
 import kotlinx.coroutines.CoroutineDispatcher
 
@@ -14,6 +15,8 @@ interface CommonApi {
     fun provideResourceManager(): ResourceManager
 
     fun provideDateFormatter(): DateFormatter
+
+    fun provideCityFormatter(): CityFormatter
 
     fun provideAppProperties(): AppProperties
 

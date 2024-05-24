@@ -28,8 +28,6 @@ class EventsRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getEventInfo(eventId: Int): EventInfoResponse {
-        return api.getEventInfo(
-            eventId = eventId
-        )
+        return api.getEventInfo(eventId = eventId)
     }
 }

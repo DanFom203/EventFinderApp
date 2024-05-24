@@ -19,5 +19,21 @@
     <string name="event_end_date">Event End Date</string>
     <string name="favorites_comments">Favorites: 10 | Comments: 5</string>
     <string name="search_for_events">Search For Events</string>
+    <string name="event_address">Event Address:</string>
+    <string name="event_location">Event Location:</string>
+    <string name="event_description_label">Event Description:</string>
+    <string name="categories">Categories:</string>
+    <string name="age_restriction">Age Restriction:</string>
+    <string name="is_free">Is Event Free To Visit:</string>
+    <string name="images">Images:</string>
+    <string name="favorites_count">Favorites Count:</string>
+    <string name="comments_count">Comments Count:</string>
+    <string name="favorites">Favorites:</string>
+    <string name="comments">Comments:</string>
+    <string name="comments_btn">Comments</string>
+    <string name="add_to_favourites">Add To Favourites</string>
+    <string name="added_to_favourites">Added To Favourites</string>
+    <string name="back">Back</string>
+    <string name="evert_image">Evert Image</string>
 
 </resources>

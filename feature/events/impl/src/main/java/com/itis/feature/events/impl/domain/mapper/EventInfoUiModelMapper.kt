@@ -19,7 +19,9 @@ class EventInfoUiModelMapper @Inject constructor() {
                 isFree = it.isFree,
                 images = it.images,
                 favoritesCount = it.favoritesCount,
-                commentsCount = it.commentsCount
+                commentsCount = it.commentsCount,
+                startDate = it.startDate,
+                endDate = it.endDate,
             )
         }
     }

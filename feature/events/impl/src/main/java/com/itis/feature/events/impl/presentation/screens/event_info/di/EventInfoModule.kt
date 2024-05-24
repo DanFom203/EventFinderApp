@@ -3,12 +3,13 @@ package com.itis.feature.events.impl.presentation.screens.event_info.di
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.firestore.FirebaseFirestore
 import com.itis.common.di.viewmodel.ViewModelKey
 import com.itis.common.di.viewmodel.ViewModelModule
+import com.itis.common.storage.PreferencesImpl
 import com.itis.feature.events.impl.data.ExceptionHandlerDelegate
 import com.itis.feature.events.impl.domain.usecase.GetEventInfoUseCase
 import com.itis.feature.events.impl.presentation.screens.event_info.EventInfoViewModel
-import com.itis.feature.events.impl.presentation.screens.events.EventsViewModel
 import com.itis.feature.events.impl.utils.EventsFeatureRouter
 import dagger.Module
 import dagger.Provides
@@ -26,12 +27,14 @@ class EventInfoModule {
     }
 
     @Provides
-    @[IntoMap ViewModelKey(EventsViewModel::class)]
+    @[IntoMap ViewModelKey(EventInfoViewModel::class)]
     fun provideEventInfoViewModel (
         useCase: GetEventInfoUseCase,
         router: EventsFeatureRouter,
-        exceptionHandlerDelegate: ExceptionHandlerDelegate
+        exceptionHandlerDelegate: ExceptionHandlerDelegate,
+        db: FirebaseFirestore,
+        preferencesImpl: PreferencesImpl
     ): ViewModel {
-        return EventInfoViewModel(useCase,router,exceptionHandlerDelegate)
+        return EventInfoViewModel(useCase,router,exceptionHandlerDelegate, db, preferencesImpl)
     }
 }

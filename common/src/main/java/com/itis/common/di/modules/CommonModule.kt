@@ -8,6 +8,7 @@ import com.itis.common.core.resources.ResourceManagerImpl
 import com.itis.common.di.scope.ApplicationScope
 import com.itis.common.notification.NotificationManagerWrapper
 import com.itis.common.notification.NotificationManagerWrapperImpl
+import com.itis.common.utils.CityFormatter
 import com.itis.common.utils.DateFormatter
 import dagger.Module
 import dagger.Provides
@@ -32,6 +33,11 @@ class CommonModule {
     @Provides
     fun provideDateFormatter(): DateFormatter {
         return DateFormatter()
+    }
+
+    @Provides
+    fun provideCityFormatter(): CityFormatter {
+        return CityFormatter()
     }
 
     @Provides

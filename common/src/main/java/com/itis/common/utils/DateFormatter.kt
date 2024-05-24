@@ -25,4 +25,28 @@ class DateFormatter {
     fun formatEpochSecondsToDate(seconds: Long): Date {
         return Date(seconds * 1000)  // Преобразование секунд в миллисекунды
     }
+
+    fun verifyStartDate(startDate: Long): String {
+        return if (startDate <= Constants.YEAR_2022_TIME_DATA ||
+            startDate >= Constants.FUTURE_TIME_DATA
+        ) {
+            "Open-started event"
+        } else {
+            formatDateTime(
+                formatEpochSecondsToDate(startDate)
+            )
+        }
+    }
+
+    fun verifyEndDate(endDate: Long): String {
+        return if (endDate <= Constants.YEAR_2024_TIME_DATA ||
+            endDate >= Constants.FUTURE_TIME_DATA
+        ) {
+            "Open-ended event"
+        } else {
+            formatDateTime(
+                formatEpochSecondsToDate(endDate)
+            )
+        }
+    }
 }

@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.jetbrainsKotlinKapt)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -42,6 +43,8 @@ dependencies {
     api(project(":feature:kudago:api"))
     //dagger2
     implementation(libs.dagger)
+    //firebase-firestore-database
+    implementation(libs.firebase.firestore)
     "kapt"(libs.dagger.compiler)
     //viewBindingDelegateByKirich1409
     implementation(libs.viewbindingpropertydelegate.noreflection)

@@ -38,7 +38,7 @@ class SignUpFragment : BaseFragment<SignUpViewModel>(R.layout.fragment_sign_up) 
         viewModel.signUpFlow.collect { result ->
             when (result) {
                 is AsyncResult.Success -> {
-                    viewModel.initializeUser()
+                    viewModel.openSignIn()
                 }
 
                 is AsyncResult.Error -> {

@@ -11,15 +11,17 @@ class EventInfoDomainModelMapper @Inject constructor() {
             EventInfoDomainModel(
                 id = it.id,
                 title = it.title,
-                address = it.place.address,
-                location = it.place.location,
+                address = it.place?.address ?: "Unknown address",
+                location = it.place?.location ?: "Unknown location",
                 description = it.description,
                 categories = it.categories,
                 ageRestriction = it.ageRestriction ?: "No age restriction",
                 isFree = it.isFree,
                 images = it.images,
                 favoritesCount = it.favoritesCount,
-                commentsCount = it.commentsCount
+                commentsCount = it.commentsCount,
+                startDate = it.dates[0].startDate,
+                endDate = it.dates[0].endDate,
             )
         }
     }

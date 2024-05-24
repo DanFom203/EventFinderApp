@@ -1,5 +1,6 @@
 package com.itis.feature.events.impl.di
 
+import android.content.Context
 import com.itis.common.di.FeatureApiHolder
 import com.itis.common.di.FeatureContainer
 import com.itis.common.di.scope.ApplicationScope
@@ -11,7 +12,8 @@ import javax.inject.Inject
 class EventsFeatureHolder @Inject constructor(
     featureContainer: FeatureContainer,
     private val router: EventsFeatureRouter,
-    private val api: KudagoApi
+    private val api: KudagoApi,
+    private val context: Context
 ) : FeatureApiHolder(featureContainer) {
 
     override fun initializeDependencies(): Any {
@@ -21,6 +23,7 @@ class EventsFeatureHolder @Inject constructor(
                 .build()
         return DaggerEventsFeatureComponent.builder()
             .withDependencies(eventsFeatureDependencies)
+            .context(context)
             .api(api)
             .router(router)
             .build()

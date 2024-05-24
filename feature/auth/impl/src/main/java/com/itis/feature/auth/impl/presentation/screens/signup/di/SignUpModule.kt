@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.itis.common.di.viewmodel.ViewModelKey
 import com.itis.common.di.viewmodel.ViewModelModule
-import com.itis.common.storage.PreferencesImpl
 import com.itis.feature.auth.impl.domain.usecases.SignUpUseCase
 import com.itis.feature.auth.impl.presentation.screens.signup.SignUpViewModel
 import com.itis.feature.auth.impl.utils.UsersAuthRouter
@@ -33,8 +32,7 @@ class SignUpModule {
     fun provideRegisterViewModel(
         useCase: SignUpUseCase,
         router: UsersAuthRouter,
-        preferencesImpl: PreferencesImpl
     ): ViewModel {
-        return SignUpViewModel(useCase,router,preferencesImpl)
+        return SignUpViewModel(useCase,router)
     }
 }

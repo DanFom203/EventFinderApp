@@ -57,4 +57,8 @@ class Navigator : UsersAuthRouter, EventsFeatureRouter {
             )
         )
     }
+
+    override fun openEventsScreenFromEventInfoScreen() {
+        navController?.popBackStack()
+    }
 }

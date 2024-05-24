@@ -17,7 +17,7 @@ class EventsAdapter (
     private val glide: RequestManager,
     private val actionNext: (EventUiModel) -> Unit,
     private val resManager: ResourceManager,
-    private val dateFormatter: DateFormatter
+    private val dateFormatter: DateFormatter,
 ): ListAdapter<EventUiModel, RecyclerView.ViewHolder>(
     object : DiffUtil.ItemCallback<EventUiModel>() {
         override fun areItemsTheSame(
@@ -39,7 +39,8 @@ class EventsAdapter (
             binding = ItemEventBinding.inflate(LayoutInflater.from(parent.context), parent, false),
             glide = glide,
             actionNext = actionNext,
-            dateFormatter = dateFormatter
+            dateFormatter = dateFormatter,
+            resManager = resManager
         )
     }
 

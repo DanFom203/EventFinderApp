@@ -9,6 +9,7 @@ class PreferencesImpl @Inject constructor(context: Context) : Preferences {
 
     companion object {
         private const val KEY_AUTH_STATUS = "auth_status"
+        private const val KEY_CURRENT_USER_ID = "user_id"
     }
 
     val prefs: SharedPreferences = context.getSharedPreferences("config", Context.MODE_PRIVATE)
@@ -20,5 +21,13 @@ class PreferencesImpl @Inject constructor(context: Context) : Preferences {
 
     override fun getAutStatus(): Boolean {
         return prefs.getBoolean(KEY_AUTH_STATUS,false)
+    }
+
+    override fun saveCurrentUserId(userId: String) {
+        prefs.edit().putString(KEY_CURRENT_USER_ID, userId).apply()
+    }
+
+    override fun getCurrentUserId(): String {
+        return prefs.getString(KEY_CURRENT_USER_ID, "No current user")!!
     }
 }

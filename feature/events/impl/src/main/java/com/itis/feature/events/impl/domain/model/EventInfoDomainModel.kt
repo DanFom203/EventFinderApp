@@ -13,5 +13,7 @@ data class EventInfoDomainModel (
     val isFree: Boolean,
     val images: List<EventImage>,
     val favoritesCount: Int,
-    val commentsCount: Int
+    val commentsCount: Int,
+    val startDate: Long,
+    val endDate: Long,
 )

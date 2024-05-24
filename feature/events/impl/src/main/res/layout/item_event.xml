@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="16dp"
-    android:layout_marginTop="8dp"
+    android:layout_marginTop="12dp"
     android:background="@color/white"
     android:theme="@style/Theme.MaterialComponents.DayNight"
     app:cardCornerRadius="8dp"
@@ -13,20 +13,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="16dp">
 
-        <ImageView
-            android:id="@+id/event_iv"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp" />
-
+        <!-- Event Title -->
         <TextView
             android:id="@+id/textViewEventTitle"
             android:layout_width="0dp"
@@ -35,38 +25,57 @@
             android:background="@color/lightYellow"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:fontFamily="@font/ibm_plex_mono_medium"
-            app:layout_constraintStart_toEndOf="@id/event_iv"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/event_iv"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp" />
+            app:layout_constraintBottom_toTopOf="@id/event_iv"
+            android:layout_marginBottom="16dp" />
 
+        <!-- Event Image -->
+        <ImageView
+            android:id="@+id/event_iv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/textViewEventTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="16:9"
+            android:contentDescription="@string/evert_image" />
+
+        <!-- Event Description -->
         <TextView
             android:id="@+id/event_description_tv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/event_description"
-            android:textSize="14sp"
+            android:textSize="12sp"
             android:maxLines="2"
             android:ellipsize="end"
             android:fontFamily="@font/ibm_plex_mono"
-            app:layout_constraintStart_toStartOf="@id/textViewEventTitle"
-            app:layout_constraintEnd_toEndOf="@id/textViewEventTitle"
-            app:layout_constraintTop_toBottomOf="@id/textViewEventTitle"
-            android:layout_marginTop="8dp" />
+            app:layout_constraintTop_toBottomOf="@id/event_iv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
 
+        <!-- Start Date Label -->
         <TextView
             android:id="@+id/start_date_label_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/start_date"
             android:textSize="12sp"
+            android:textStyle="bold"
             android:fontFamily="@font/ibm_plex_mono"
-            app:layout_constraintStart_toStartOf="@id/event_description_tv"
             app:layout_constraintTop_toBottomOf="@id/event_description_tv"
+            app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="16dp" />
 
+        <!-- Start Date Value -->
         <TextView
             android:id="@+id/start_date_tv"
             android:layout_width="0dp"
@@ -75,21 +84,24 @@
             android:textSize="12sp"
             android:fontFamily="@font/ibm_plex_mono"
             app:layout_constraintStart_toEndOf="@id/start_date_label_tv"
-            app:layout_constraintEnd_toEndOf="@id/event_description_tv"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/start_date_label_tv"
             android:layout_marginStart="8dp" />
 
+        <!-- End Date Label -->
         <TextView
             android:id="@+id/end_date_label_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/end_date"
             android:textSize="12sp"
+            android:textStyle="bold"
             android:fontFamily="@font/ibm_plex_mono"
-            app:layout_constraintStart_toStartOf="@id/start_date_label_tv"
             app:layout_constraintTop_toBottomOf="@id/start_date_tv"
+            app:layout_constraintStart_toStartOf="@id/start_date_label_tv"
             android:layout_marginTop="8dp" />
 
+        <!-- End Date Value -->
         <TextView
             android:id="@+id/end_date_tv"
             android:layout_width="0dp"
@@ -98,22 +110,23 @@
             android:textSize="12sp"
             android:fontFamily="@font/ibm_plex_mono"
             app:layout_constraintStart_toEndOf="@id/end_date_label_tv"
-            app:layout_constraintEnd_toEndOf="@id/start_date_tv"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/end_date_label_tv"
             android:layout_marginStart="8dp" />
 
+        <!-- Favorites and Comments -->
         <TextView
             android:id="@+id/favourites_comments_tv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:text="@string/favorites_comments"
             android:textSize="12sp"
             android:fontFamily="@font/ibm_plex_mono"
+            android:layout_marginTop="8dp"
             android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@id/end_date_label_tv"
-            app:layout_constraintTop_toBottomOf="@id/end_date_tv" />
+            app:layout_constraintTop_toBottomOf="@id/end_date_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

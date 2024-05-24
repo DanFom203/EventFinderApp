@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sign_up_screen"
+        android:background="@color/lightYellow"
         android:textSize="40sp"
         android:textStyle="bold"
         android:layout_marginBottom="60dp" />
@@ -77,6 +78,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/sign_up"
+        android:backgroundTint="@color/yellow"
         android:layout_margin="16dp" />
 
     <TextView

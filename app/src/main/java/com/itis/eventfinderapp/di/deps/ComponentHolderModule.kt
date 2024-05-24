@@ -28,6 +28,6 @@ interface ComponentHolderModule {
     @ApplicationScope
     @Binds
     @[IntoMap ClassKey(EventsFeatureApi::class)]
-    fun providePredictionFeatureHolder(predictionFeatureHolder: EventsFeatureHolder): FeatureApiHolder
+    fun provideEventsFeatureHolder(eventsFeatureHolder: EventsFeatureHolder): FeatureApiHolder
 
 }
