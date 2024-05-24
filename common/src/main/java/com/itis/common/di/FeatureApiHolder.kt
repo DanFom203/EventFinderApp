@@ -9,6 +9,7 @@ abstract class FeatureApiHolder(
 
     private var mFeatureApi: Any? = null
 
+    @Suppress("UNCHECKED_CAST")
     fun <T> getFeatureApi(): T {
         mFeatureLocker.lock()
         if (mFeatureApi == null) {

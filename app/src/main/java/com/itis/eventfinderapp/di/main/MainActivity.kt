@@ -2,6 +2,7 @@ package com.itis.eventfinderapp.di.main
 
 import android.view.View
 import androidx.navigation.NavController
+import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
@@ -9,6 +10,8 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.itis.common.base.BaseActivity
 import com.itis.common.utils.AsyncResult
+import com.itis.common.utils.gone
+import com.itis.common.utils.show
 import com.itis.eventfinderapp.R
 import com.itis.eventfinderapp.databinding.ActivityMainBinding
 import com.itis.eventfinderapp.di.deps.findComponentDependencies
@@ -40,9 +43,30 @@ class MainActivity : BaseActivity<MainViewModel>(){
         findViewById<BottomNavigationView>(R.id.menu_bnv).apply {
             setupWithNavController(this@MainActivity.controller!!)
         }
+
+        controller!!.addOnDestinationChangedListener { _, destination, _ ->
+            handleBottomNavigationViewVisibility(destination)
+        }
+
         viewBinding.menuBnv.setOnItemSelectedListener { item ->
             NavigationUI.onNavDestinationSelected(item, this.controller!!)
             return@setOnItemSelectedListener true
+        }
+
+    }
+
+    private fun handleBottomNavigationViewVisibility(destination: NavDestination) {
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.menu_bnv)
+
+        val shouldShowBottomNav = when (destination.id) {
+            R.id.eventInfoFragment -> false
+            else -> true
+        }
+
+        bottomNavigationView.visibility = if (shouldShowBottomNav) {
+            View.VISIBLE
+        } else {
+            View.GONE
         }
 
     }
@@ -53,9 +77,9 @@ class MainActivity : BaseActivity<MainViewModel>(){
                 when(result) {
                     is AsyncResult.Success -> {
                         if (result.getDataOrNull()!!) {
-                            menuBnv.visibility = View.VISIBLE
+                            menuBnv.show()
                         } else {
-                            menuBnv.visibility = View.INVISIBLE
+                            menuBnv.gone()
                         }
                     }
                     is AsyncResult.Error -> {
