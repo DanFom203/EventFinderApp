@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.itis.common.di.viewmodel.ViewModelKey
 import com.itis.common.di.viewmodel.ViewModelModule
-import com.itis.common.storage.PreferencesImpl
+import com.itis.common.data.storage.PreferencesImpl
 import com.itis.feature.auth.impl.presentation.screens.splash.SplashScreenViewModel
 import com.itis.feature.auth.impl.utils.UsersAuthRouter
 import dagger.Module

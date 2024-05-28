@@ -12,6 +12,8 @@ import com.itis.feature.auth.api.di.AuthFeatureApi
 import com.itis.feature.auth.impl.di.AuthFeatureHolder
 import com.itis.feature.events.api.di.EventsFeatureApi
 import com.itis.feature.events.impl.di.EventsFeatureHolder
+import com.itis.feature.notes.api.di.NotesFeatureApi
+import com.itis.feature.notes.impl.di.NotesFeatureHolder
 
 @Module
 interface ComponentHolderModule {
@@ -29,5 +31,10 @@ interface ComponentHolderModule {
     @Binds
     @[IntoMap ClassKey(EventsFeatureApi::class)]
     fun provideEventsFeatureHolder(eventsFeatureHolder: EventsFeatureHolder): FeatureApiHolder
+
+    @ApplicationScope
+    @Binds
+    @[IntoMap ClassKey(NotesFeatureApi::class)]
+    fun provideNotesFeatureHolder(notesFeatureHolder: NotesFeatureHolder): FeatureApiHolder
 
 }

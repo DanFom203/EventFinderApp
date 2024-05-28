@@ -54,6 +54,6 @@ class EventsAdapter (
     override fun getItemViewType(position: Int): Int =
         when (currentList[position]) {
             is EventUiModel -> R.layout.item_event
-            else -> throw IllegalArgumentException(resManager.getString(R.string.unknown_error))
+            else -> throw IllegalArgumentException(resManager.getString(R.string.wrong_item_type))
         }
 }

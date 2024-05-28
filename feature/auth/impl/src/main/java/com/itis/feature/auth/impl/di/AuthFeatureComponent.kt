@@ -1,6 +1,8 @@
 package com.itis.feature.auth.impl.di
 
 import android.content.Context
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.itis.feature.auth.impl.presentation.screens.signup.di.SignUpComponent
 import com.itis.common.di.CommonApi
 import com.itis.common.di.scope.FeatureScope
@@ -33,6 +35,10 @@ interface AuthFeatureComponent : AuthFeatureApi {
     interface Builder {
         @BindsInstance
         fun context(context: Context): Builder
+        @BindsInstance
+        fun auth(firebaseAuth: FirebaseAuth): Builder
+        @BindsInstance
+        fun db(firestore: FirebaseFirestore): Builder
         @BindsInstance
         fun router(usersAuthRouter: UsersAuthRouter): Builder
         fun withDependencies(deps: AuthFeatureDependencies): Builder

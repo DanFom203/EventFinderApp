@@ -10,7 +10,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        minSdk = 24
+        minSdk = 21
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -43,9 +43,10 @@ dependencies {
     api(project(":feature:kudago:api"))
     //dagger2
     implementation(libs.dagger)
-    //firebase-firestore-database
-    implementation(libs.firebase.firestore)
     "kapt"(libs.dagger.compiler)
+    //firebase-firestore-database
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.firestore)
     //viewBindingDelegateByKirich1409
     implementation(libs.viewbindingpropertydelegate.noreflection)
     //retrofit2

@@ -3,10 +3,10 @@ package com.itis.feature.events.impl.presentation.screens.event_info
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.firestore.FirebaseFirestore
 import com.itis.common.base.BaseViewModel
-import com.itis.common.storage.PreferencesImpl
+import com.itis.common.data.storage.PreferencesImpl
 import com.itis.feature.events.api.domain.request.UsersFavouriteEventsRequest
-import com.itis.feature.events.impl.data.ExceptionHandlerDelegate
-import com.itis.feature.events.impl.data.runCatching
+import com.itis.common.utils.ExceptionHandlerDelegate
+import com.itis.common.utils.runCatching
 import com.itis.feature.events.impl.domain.usecase.GetEventInfoUseCase
 import com.itis.feature.events.impl.presentation.model.EventInfoUiModel
 import com.itis.feature.events.impl.utils.EventsFeatureRouter

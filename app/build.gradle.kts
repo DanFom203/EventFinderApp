@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "com.itis.eventfinderapp"
-        minSdk = 24
+        minSdk = 21
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -47,6 +47,8 @@ dependencies {
     api(project(":feature:events:api"))
     api(project(":feature:events:impl"))
     api(project(":feature:kudago:api"))
+    api(project(":feature:notes:api"))
+    api(project(":feature:notes:impl"))
     //dagger2
     implementation(libs.dagger)
     implementation(libs.firebase.auth)
@@ -62,6 +64,8 @@ dependencies {
     //firebase
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
+    //firebase-firestore-database
+    implementation(libs.firebase.firestore)
     //loggingInterceptor
     implementation(libs.logging.interceptor)
 

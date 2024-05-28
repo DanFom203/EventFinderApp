@@ -1,5 +1,6 @@
 package com.itis.feature.events.impl.presentation.screens.events
 
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,6 +26,7 @@ class EventsFragment : BaseFragment<EventsViewModel>(R.layout.fragment_events) {
 
     private val viewBinding: FragmentEventsBinding by viewBinding(FragmentEventsBinding::bind)
     private var eventsAdapter: EventsAdapter? = null
+    private var originalEventsList: List<EventUiModel> = emptyList()
 
     @Inject
     lateinit var resManager: ResourceManager
@@ -45,6 +47,27 @@ class EventsFragment : BaseFragment<EventsViewModel>(R.layout.fragment_events) {
             )
             eventsRv.adapter = eventsAdapter
         }
+        setupSearchView()
+    }
+
+    private fun setupSearchView() {
+        viewBinding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                filterEvents(newText.orEmpty())
+                return true
+            }
+        })
+    }
+
+    private fun filterEvents(query: String) {
+        val filteredList = originalEventsList.filter { event ->
+            event.title.contains(query, ignoreCase = true)
+        }
+        eventsAdapter?.submitList(filteredList)
     }
 
     override fun inject() {
@@ -61,7 +84,8 @@ class EventsFragment : BaseFragment<EventsViewModel>(R.layout.fragment_events) {
                         val layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
                         eventsRv.layoutManager = layoutManager
                         eventsRv.adapter = eventsAdapter
-                        eventsAdapter?.submitList(it.events)
+                        originalEventsList = it.events
+                        eventsAdapter?.submitList(originalEventsList)
                         loadingProgressBar.gone()
                     }
                 }
@@ -74,7 +98,6 @@ class EventsFragment : BaseFragment<EventsViewModel>(R.layout.fragment_events) {
                     viewBinding.loadingProgressBar.gone()
                 }
             }
-
         }
     }
 

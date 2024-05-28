@@ -4,6 +4,7 @@ import com.itis.common.di.scope.ApplicationScope
 import com.itis.eventfinderapp.navigation.Navigator
 import com.itis.feature.auth.impl.utils.UsersAuthRouter
 import com.itis.feature.events.impl.utils.EventsFeatureRouter
+import com.itis.feature.notes.impl.utils.NotesFeatureRouter
 import dagger.Module
 import dagger.Provides
 
@@ -22,4 +23,7 @@ class NavigationModule {
     @Provides
     fun provideEventsRouter(navigator: Navigator): EventsFeatureRouter = navigator
 
+    @ApplicationScope
+    @Provides
+    fun provideNotesRouter(navigator: Navigator): NotesFeatureRouter = navigator
 }

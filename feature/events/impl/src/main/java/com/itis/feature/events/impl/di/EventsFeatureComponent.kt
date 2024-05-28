@@ -1,6 +1,7 @@
 package com.itis.feature.events.impl.di
 
 import android.content.Context
+import com.google.firebase.firestore.FirebaseFirestore
 import com.itis.common.di.CommonApi
 import com.itis.common.di.scope.FeatureScope
 import com.itis.feature.events.api.di.EventsFeatureApi
@@ -27,7 +28,9 @@ interface EventsFeatureComponent: EventsFeatureApi {
         @BindsInstance
         fun context(context: Context): Builder
         @BindsInstance
-        fun api(pandasScoreApi: KudagoApi):Builder
+        fun api(pandasScoreApi: KudagoApi): Builder
+        @BindsInstance
+        fun db(firestore: FirebaseFirestore): Builder
         @BindsInstance
         fun router(predictionFeatureRouter: EventsFeatureRouter): Builder
         fun withDependencies(deps: EventsFeatureDependencies): Builder

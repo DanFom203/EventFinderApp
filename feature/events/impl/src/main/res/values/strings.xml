@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Errors -->
-    <string name="bad_request">Bad request</string>
-    <string name="internal_server_error">The server cannot process the request</string>
-    <string name="error_not_found">Error Not Found</string>
-    <string name="user_not_authorized">You are not authorized</string>
-    <string name="too_many_requests">Exceeded the number of request attempts</string>
     <string name="unknown_error">Unknown error</string>
+    <string name="wrong_item_type">Wrong item type</string>
 
-<!--    Xml string resources-->
+    <!--    Xml string resources-->
     <string name="events">Events</string>
     <string name="city_name">City name</string>
     <string name="event_title">Event Title</string>

@@ -6,8 +6,9 @@ import com.itis.feature.auth.impl.utils.UsersAuthRouter
 import com.itis.feature.events.impl.presentation.model.EventUiModel
 import com.itis.feature.events.impl.presentation.screens.event_info.EventInfoFragment
 import com.itis.feature.events.impl.utils.EventsFeatureRouter
+import com.itis.feature.notes.impl.utils.NotesFeatureRouter
 
-class Navigator : UsersAuthRouter, EventsFeatureRouter {
+class Navigator : UsersAuthRouter, EventsFeatureRouter, NotesFeatureRouter {
 
     private var navController: NavController? = null
 
@@ -59,6 +60,14 @@ class Navigator : UsersAuthRouter, EventsFeatureRouter {
     }
 
     override fun openEventsScreenFromEventInfoScreen() {
+        navController?.popBackStack()
+    }
+
+    override fun openAddNoteScreenFromNotesScreen() {
+        navController?.navigate(R.id.action_notesFragment_to_addNoteFragment)
+    }
+
+    override fun openNotesScreenFromAddNotesScreen() {
         navController?.popBackStack()
     }
 }

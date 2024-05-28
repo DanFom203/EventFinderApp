@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Api Exceptions -->
+    <string name="bad_request">Bad request</string>
+    <string name="internal_server_error">The server cannot process the request</string>
+    <string name="error_not_found">Error Not Found</string>
+    <string name="user_not_authorized">You are not authorized</string>
+    <string name="too_many_requests">Exceeded the number of request attempts</string>
+
+    <string name="unknown_error">Unknown error</string>
+
+    <!--  Auth Exceptions  -->
+    <string name="error_empty_email">Email cannot be empty</string>
+    <string name="error_invalid_email">Invalid email format</string>
+    <string name="error_empty_password">Password cannot be empty</string>
+    <string name="error_empty_username">Username cannot be empty</string>
+    <string name="error_empty_city">City field cannot be empty</string>
+    <string name="error_invalid_password">Password must be at least 6 characters long</string>
+    <string name="error_invalid_username">Username must be at least 2 characters long</string>
+</resources>

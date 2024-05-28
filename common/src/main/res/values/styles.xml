@@ -28,5 +28,4 @@
     <style name="BorderedButtonTheme" parent="Widget.AppCompat.Button">
         <item name="android:background">@drawable/button_background</item>
     </style>
-
 </resources>

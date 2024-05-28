@@ -1,11 +1,11 @@
 package com.itis.feature.auth.impl.data.repository
 
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.UserProfileChangeRequest
-import com.itis.common.storage.PreferencesImpl
+import com.google.firebase.firestore.FirebaseFirestore
+import com.itis.common.data.exceptions.AuthException
+import com.itis.common.data.storage.PreferencesImpl
 import com.itis.feature.auth.api.domain.model.User
 import com.itis.feature.auth.api.domain.repository.UserRepository
-import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
@@ -13,7 +13,8 @@ import kotlin.coroutines.suspendCoroutine
 
 class UserRepositoryImpl @Inject constructor(
     private val auth: FirebaseAuth,
-    private val preferencesImpl: PreferencesImpl
+    private val preferencesImpl: PreferencesImpl,
+    private val db: FirebaseFirestore
 ) : UserRepository {
     override suspend fun createUser(
         username: String,
@@ -27,22 +28,15 @@ class UserRepositoryImpl @Inject constructor(
         return suspendCoroutine { continuation ->
             createUserTask.addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    // User account created
                     val user = auth.currentUser
-                    val profileUpdates = UserProfileChangeRequest.Builder()
-                        .setDisplayName(username)
-                        .build()
-                    user?.updateProfile(profileUpdates)
-                        ?.addOnCompleteListener { updateTask ->
-                            if (updateTask.isSuccessful) {
-                                continuation.resume(User(user.displayName ?: "", user.email ?: ""))
-                            } else {
-                                continuation.resumeWithException(Exception("Error updating user profile: ${updateTask.exception?.message}"))
-                            }
-                        }
+                    // User account created
+                    saveToFirestoreDb(user!!.uid, username, email, city)
+                    continuation.resume(User(user.uid, username, email, city))
                 } else {
                     // Sign up failed
-                    continuation.resumeWithException(Exception("Error creating user: ${task.exception?.message}"))
+                    continuation.resumeWithException(
+                        AuthException.InvalidCredentials("Unable to create new account with these credentials")
+                    )
                 }
             }
         }
@@ -54,24 +48,54 @@ class UserRepositoryImpl @Inject constructor(
         return suspendCoroutine { continuation ->
             signInTask.addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    val user = task.result?.user
-                    preferencesImpl.saveCurrentUserId(user?.uid ?: "")
-                    val profileUpdates = UserProfileChangeRequest.Builder()
-                        .setDisplayName(user?.displayName)
-                        .build()
-                    continuation.resume(User(user?.email ?: "", user?.displayName ?: ""))
+                    val user = auth.currentUser
+                    if (user != null) {
+                        val userDocRef = db.collection("users").document(user.uid)
+                        userDocRef.get().addOnCompleteListener { docTask ->
+                            if (docTask.isSuccessful) {
+                                val document = docTask.result
+                                if (document != null && document.exists()) {
+                                    val dbUsername = document.getString("username") ?: ""
+                                    val dbCity = document.getString("city") ?: ""
+
+                                    preferencesImpl.saveCurrentUserId(user.uid)
+                                    continuation.resume(User(user.uid, dbUsername, email, dbCity))
+                                } else {
+                                    continuation.resumeWithException(
+                                        AuthException.InvalidCredentials("User data not found in Firestore")
+                                    )
+                                }
+                            } else {
+                                continuation.resumeWithException(
+                                    AuthException.InvalidCredentials("Error retrieving user data from Firestore")
+                                )
+                            }
+                        }
+                    } else {
+                        continuation.resumeWithException(
+                            AuthException.InvalidCredentials("User sign-in succeeded but currentUser is null")
+                        )
+                    }
                 } else {
-                    continuation.resumeWithException(Exception("Error signing in: ${task.exception?.message}"))
+                    continuation.resumeWithException(
+                        AuthException.InvalidCredentials("Unable to login with these credentials")
+                    )
                 }
             }
         }
     }
 
-    override suspend fun signOut() {
-        auth.signOut()
+    private fun saveToFirestoreDb(userId: String, username: String, email: String, city: String) {
+        val user = User(
+            userId = userId,
+            username = username,
+            email = email,
+            city = city
+        )
+
+        db.collection("users")
+            .document(userId)
+            .set(user)
     }
 
-    override suspend fun deleteAccount() {
-        auth.currentUser!!.delete().await()
-    }
 }

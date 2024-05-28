@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.itis.common.di.viewmodel.ViewModelKey
 import com.itis.common.di.viewmodel.ViewModelModule
-import com.itis.feature.events.impl.data.ExceptionHandlerDelegate
+import com.itis.common.utils.ExceptionHandlerDelegate
 import com.itis.feature.events.impl.domain.usecase.GetCurrentEventsUseCase
 import com.itis.feature.events.impl.presentation.screens.events.EventsViewModel
 import com.itis.feature.events.impl.utils.EventsFeatureRouter

@@ -1,5 +1,7 @@
 package com.itis.eventfinderapp.di.app
 
+import com.itis.common.di.modules.FirebaseModule
+import com.itis.common.di.modules.RoomDatabaseModule
 import com.itis.common.di.CommonApi
 import com.itis.common.di.modules.CommonModule
 import com.itis.common.di.modules.NetworkModule
@@ -24,7 +26,9 @@ import dagger.Component
         NavigationModule::class,
         ComponentHolderModule::class,
         ComponentDependenciesModule::class,
-        FeatureManagerModule::class
+        FeatureManagerModule::class,
+        FirebaseModule::class,
+        RoomDatabaseModule::class
     ],
     dependencies = []
 )

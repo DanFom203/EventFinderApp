@@ -7,8 +7,10 @@
     <color name="lightGrey">#c4c4c4</color>
     <color name="colorBackground">#f7f7f7</color>
     <color name="lightRed">#EDABA6</color>
+    <color name="red">#C63535</color>
     <color name="colorError">#F44336</color>
     <color name="colorTextPrimary">#e6000000</color>
     <color name="colorTextSecondary">#88000000</color>
     <color name="black">#000000</color>
+    <color name="rounded_corner_color">#FFFFFF</color>
 </resources>

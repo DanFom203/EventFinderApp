@@ -1,6 +1,8 @@
 package com.itis.feature.auth.impl.di
 
 import android.content.Context
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.itis.common.di.FeatureApiHolder
 import com.itis.common.di.FeatureContainer
 import com.itis.common.di.scope.ApplicationScope
@@ -11,6 +13,8 @@ import javax.inject.Inject
 class AuthFeatureHolder @Inject constructor(
     featureContainer: FeatureContainer,
     private val usersAuthRouter: UsersAuthRouter,
+    private val auth: FirebaseAuth,
+    private val db: FirebaseFirestore,
     private val context:Context
 ) : FeatureApiHolder(featureContainer) {
     override fun initializeDependencies(): Any {
@@ -19,11 +23,10 @@ class AuthFeatureHolder @Inject constructor(
             .build()
         return DaggerAuthFeatureComponent.builder()
             .context(context)
+            .auth(auth)
+            .db(db)
             .withDependencies(authFeatureDependencies)
             .router(usersAuthRouter)
             .build()
-
     }
-
-
 }

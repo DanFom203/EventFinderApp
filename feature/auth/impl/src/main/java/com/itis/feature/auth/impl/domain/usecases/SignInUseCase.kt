@@ -5,7 +5,6 @@ import com.itis.feature.auth.impl.domain.mapper.UserUiModelMapper
 import com.itis.feature.auth.impl.presentation.model.SignInForm
 import com.itis.feature.auth.impl.presentation.model.UserUiModel
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 

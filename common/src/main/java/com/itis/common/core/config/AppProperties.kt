@@ -23,6 +23,4 @@ class AppProperties(context: Context) {
         val writeTimeout = properties["http.timeout.write"]?.toLong() ?: 0
         return NetworkProperties(connectTimeout, readTimeout, writeTimeout)
     }
-
-    fun getBaseUrl(): String = properties["base_url"] ?: ""
 }

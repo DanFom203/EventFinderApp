@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Errors -->
+    <string name="unknown_error">Unknown error</string>
+
+    <!--    Xml string resources-->
     <string name="password">Password</string>
     <string name="email">Email</string>
     <string name="sign_up">Sign Up</string>
@@ -11,4 +15,18 @@
     <string name="don_t_have_an_account_btn">Don\'t have an account? Sign Up</string>
     <string name="sign_in_screen">Sign In Screen</string>
     <string name="sign_up_screen">Sign Up Screen</string>
+    <string-array name="cities">
+        <item>Казань</item>
+        <item>Москва</item>
+        <item>Санкт-Петербург</item>
+        <item>Новосибирск</item>
+        <item>Екатеринбург</item>
+        <item>Нижний Новгород</item>
+        <item>Выборг</item>
+        <item>Самара</item>
+        <item>Краснодар</item>
+        <item>Сочи</item>
+        <item>Уфа</item>
+        <item>Красноярск</item>
+    </string-array>
 </resources>

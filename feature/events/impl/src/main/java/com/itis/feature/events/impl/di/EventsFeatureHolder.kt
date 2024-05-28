@@ -1,6 +1,7 @@
 package com.itis.feature.events.impl.di
 
 import android.content.Context
+import com.google.firebase.firestore.FirebaseFirestore
 import com.itis.common.di.FeatureApiHolder
 import com.itis.common.di.FeatureContainer
 import com.itis.common.di.scope.ApplicationScope
@@ -13,6 +14,7 @@ class EventsFeatureHolder @Inject constructor(
     featureContainer: FeatureContainer,
     private val router: EventsFeatureRouter,
     private val api: KudagoApi,
+    private val db: FirebaseFirestore,
     private val context: Context
 ) : FeatureApiHolder(featureContainer) {
 
@@ -25,6 +27,7 @@ class EventsFeatureHolder @Inject constructor(
             .withDependencies(eventsFeatureDependencies)
             .context(context)
             .api(api)
+            .db(db)
             .router(router)
             .build()
     }

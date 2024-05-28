@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.jetbrainsKotlinKapt)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -9,7 +10,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        minSdk = 24
+        minSdk = 21
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -38,6 +39,17 @@ dependencies {
     implementation(libs.dagger)
     implementation(libs.androidx.lifecycle.runtime.android)
     "kapt"(libs.dagger.compiler)
+    //retrofit2
+    implementation(libs.retrofit2)
+    //room
+    implementation(libs.room.runtime)
+    implementation(libs.room.ktx)
+    "kapt"(libs.room.compiler)
+    //firebase-auth
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.auth)
+    //firebase-firestore-database
+    implementation(libs.firebase.firestore)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

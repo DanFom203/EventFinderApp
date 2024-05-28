@@ -3,7 +3,7 @@ package com.itis.eventfinderapp.di.main
 import android.content.SharedPreferences
 import androidx.lifecycle.viewModelScope
 import com.itis.common.base.BaseViewModel
-import com.itis.common.storage.PreferencesImpl
+import com.itis.common.data.storage.PreferencesImpl
 import com.itis.common.utils.AsyncResult
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch

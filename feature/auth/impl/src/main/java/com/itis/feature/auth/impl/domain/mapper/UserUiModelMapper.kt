@@ -7,8 +7,10 @@ import javax.inject.Inject
 class UserUiModelMapper @Inject constructor() {
     fun mapFromDataToUI(user: User): UserUiModel {
         return UserUiModel(
+            id = user.userId,
             name = user.username,
-            email = user.email
+            email = user.email,
+            city = user.city
         )
     }
 }

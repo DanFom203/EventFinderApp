@@ -10,7 +10,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        minSdk = 24
+        minSdk = 21
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -40,15 +40,16 @@ android {
 dependencies {
     api(project(":common"))
     api(project(":feature:auth:api"))
-
     //dagger2
     implementation(libs.dagger)
     "kapt"(libs.dagger.compiler)
     //viewBindingDelegateByKirich1409
     implementation(libs.viewbindingpropertydelegate.noreflection)
-    //firebase
+    //firebase-auth
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
+    //firebase-firestore-database
+    implementation(libs.firebase.firestore)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

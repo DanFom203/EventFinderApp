@@ -4,7 +4,6 @@ import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -48,10 +47,10 @@ class MainActivity : BaseActivity<MainViewModel>(){
             handleBottomNavigationViewVisibility(destination)
         }
 
-        viewBinding.menuBnv.setOnItemSelectedListener { item ->
-            NavigationUI.onNavDestinationSelected(item, this.controller!!)
-            return@setOnItemSelectedListener true
-        }
+//        viewBinding.menuBnv.setOnItemSelectedListener { item ->
+//            NavigationUI.onNavDestinationSelected(item, this.controller!!)
+//            return@setOnItemSelectedListener true
+//        }
 
     }
 
@@ -59,7 +58,11 @@ class MainActivity : BaseActivity<MainViewModel>(){
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.menu_bnv)
 
         val shouldShowBottomNav = when (destination.id) {
-            R.id.eventInfoFragment -> false
+            R.id.eventInfoFragment,
+            R.id.splashScreenFragment,
+            R.id.initialFragment,
+            R.id.signInFragment,
+            R.id.signUpFragment -> false
             else -> true
         }
 
