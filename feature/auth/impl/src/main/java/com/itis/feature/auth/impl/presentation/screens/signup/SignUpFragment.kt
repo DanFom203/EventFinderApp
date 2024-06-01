@@ -28,14 +28,6 @@ class SignUpFragment : BaseFragment<SignUpViewModel>(R.layout.fragment_sign_up) 
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             citySpinner.adapter = adapter
 
-            signUpBtn.setOnClickListener {
-                viewModel.signUp(
-                    username = usernameEt.text.toString(),
-                    email = newEmailEt.text.toString(),
-                    password = newPasswordEt.text.toString(),
-                    city = citySpinner.selectedItem.toString()
-                )
-            }
             alreadyHaveAnAccountTv.setOnClickListener {
                 viewModel.openSignIn()
             }
@@ -48,6 +40,21 @@ class SignUpFragment : BaseFragment<SignUpViewModel>(R.layout.fragment_sign_up) 
     }
 
     override suspend fun subscribe(viewModel: SignUpViewModel) {
+        with(viewBinding) {
+            signUpBtn.setOnClickListener {
+                newEmailTil.error = null
+                newPasswordTil.error = null
+                usernameTil.error = null
+                cityTil.error = null
+                viewModel.signUp(
+                    username = usernameEt.text.toString(),
+                    email = newEmailEt.text.toString(),
+                    password = newPasswordEt.text.toString(),
+                    city = citySpinner.selectedItem.toString()
+                )
+            }
+        }
+
         with(viewModel) {
             signUpFlow.observe { userUiModel ->
                 if (userUiModel != null) {

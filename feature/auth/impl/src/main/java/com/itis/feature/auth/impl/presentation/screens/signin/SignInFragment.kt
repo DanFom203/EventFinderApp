@@ -18,14 +18,6 @@ class SignInFragment : BaseFragment<SignInViewModel>(R.layout.fragment_sign_in) 
 
     override fun initViews() {
         with(viewBinding) {
-            signInBtn.setOnClickListener {
-                emailTil.error = null
-                passwordTil.error = null
-                viewModel.signIn(
-                    email = emailEt.text.toString(),
-                    password = passwordEt.text.toString()
-                )
-            }
             noAccountTv.setOnClickListener {
                 viewModel.openSignUp()
             }
@@ -41,6 +33,16 @@ class SignInFragment : BaseFragment<SignInViewModel>(R.layout.fragment_sign_in) 
 
     override suspend fun subscribe(viewModel: SignInViewModel) {
         with(viewModel) {
+            with(viewBinding) {
+                signInBtn.setOnClickListener {
+                    emailTil.error = null
+                    passwordTil.error = null
+                    viewModel.signIn(
+                        email = emailEt.text.toString(),
+                        password = passwordEt.text.toString()
+                    )
+                }
+            }
 
             signInFlow.observe { userUiModel ->
                 if (userUiModel != null) {

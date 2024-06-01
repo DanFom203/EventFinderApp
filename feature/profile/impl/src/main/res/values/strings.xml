@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
+    <string name="favourite_events">Favourite Events</string>
+    <string name="change_credentials">Change Credentials</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="avatar_image">Avatar Image</string>
+</resources>

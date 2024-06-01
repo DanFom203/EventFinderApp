@@ -1,16 +1,16 @@
-package com.itis.feature.auth.impl.presentation.screens.signup.di
+package com.example.feature.profile.impl.presentation.screens.profile.di
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.feature.profile.impl.domain.usecase.GetUserProfileInfoUseCase
+import com.example.feature.profile.impl.presentation.screens.profile.ProfileViewModel
+import com.example.feature.profile.impl.utils.ProfileFeatureRouter
 import com.itis.common.di.viewmodel.ViewModelKey
 import com.itis.common.di.viewmodel.ViewModelModule
 import com.itis.common.utils.CityFormatter
 import com.itis.common.utils.CredentialsValidator
 import com.itis.common.utils.ExceptionHandlerDelegate
-import com.itis.feature.auth.impl.domain.usecases.SignUpUseCase
-import com.itis.feature.auth.impl.presentation.screens.signup.SignUpViewModel
-import com.itis.feature.auth.impl.utils.UsersAuthRouter
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap
@@ -20,24 +20,24 @@ import dagger.multibindings.IntoMap
         ViewModelModule::class
     ]
 )
-class SignUpModule {
+class ProfileModule {
     @Provides
     fun provideMainViewModel(
         fragment: Fragment,
         factory: ViewModelProvider.Factory
-    ): SignUpViewModel {
-        return ViewModelProvider(fragment, factory)[SignUpViewModel::class.java]
+    ): ProfileViewModel {
+        return ViewModelProvider(fragment, factory)[ProfileViewModel::class.java]
     }
 
     @Provides
-    @[IntoMap ViewModelKey(SignUpViewModel::class)]
-    fun provideRegisterViewModel(
-        useCase: SignUpUseCase,
-        router: UsersAuthRouter,
+    @[IntoMap ViewModelKey(ProfileViewModel::class)]
+    fun provideProfileViewModel(
+        useCase: GetUserProfileInfoUseCase,
+        router: ProfileFeatureRouter,
         exceptionHandlerDelegate: ExceptionHandlerDelegate,
         credentialsValidator: CredentialsValidator,
         cityFormatter: CityFormatter
     ): ViewModel {
-        return SignUpViewModel(useCase,router, exceptionHandlerDelegate, credentialsValidator, cityFormatter)
+        return ProfileViewModel(useCase,router, exceptionHandlerDelegate, credentialsValidator, cityFormatter)
     }
 }

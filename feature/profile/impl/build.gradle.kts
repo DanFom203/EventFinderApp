@@ -1,22 +1,18 @@
 plugins {
-    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.jetbrainsKotlinKapt)
-    id("com.google.gms.google-services")
 }
 
 android {
-    namespace = "com.itis.eventfinderapp"
+    namespace = "com.example.feature.profile.impl"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.itis.eventfinderapp"
         minSdk = 21
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -42,37 +38,17 @@ android {
 
 dependencies {
     api(project(":common"))
-    api(project(":feature:auth:api"))
-    api(project(":feature:auth:impl"))
-    api(project(":feature:events:api"))
-    api(project(":feature:events:impl"))
-    api(project(":feature:kudago:api"))
-    api(project(":feature:notes:api"))
-    api(project(":feature:notes:impl"))
     api(project(":feature:profile:api"))
-    api(project(":feature:profile:impl"))
     //dagger2
     implementation(libs.dagger)
-    implementation(libs.firebase.auth)
     "kapt"(libs.dagger.compiler)
-    //navigation
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
     //viewBindingDelegateByKirich1409
     implementation(libs.viewbindingpropertydelegate.noreflection)
-    //lifecycle
-    implementation(libs.androidx.lifecycle.extensions)
-    "kapt"(libs.androidx.lifecycle.compiler)
     //firebase-auth
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
     //firebase-firestore-database
     implementation(libs.firebase.firestore)
-    //loggingInterceptor
-    implementation(libs.logging.interceptor)
-
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

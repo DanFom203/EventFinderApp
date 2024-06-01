@@ -59,7 +59,14 @@ class UserRepositoryImpl @Inject constructor(
                                     val dbCity = document.getString("city") ?: ""
 
                                     preferencesImpl.saveCurrentUserId(user.uid)
-                                    continuation.resume(User(user.uid, dbUsername, email, dbCity))
+                                    continuation.resume(
+                                        User(
+                                            userId = user.uid,
+                                            username = dbUsername,
+                                            email = email,
+                                            city = dbCity
+                                        )
+                                    )
                                 } else {
                                     continuation.resumeWithException(
                                         AuthException.InvalidCredentials("User data not found in Firestore")
@@ -86,7 +93,7 @@ class UserRepositoryImpl @Inject constructor(
     }
 
     private fun saveToFirestoreDb(userId: String, username: String, email: String, city: String) {
-        val user = User(
+        val dbUser = User(
             userId = userId,
             username = username,
             email = email,
@@ -95,7 +102,7 @@ class UserRepositoryImpl @Inject constructor(
 
         db.collection("users")
             .document(userId)
-            .set(user)
+            .set(dbUser)
     }
 
 }

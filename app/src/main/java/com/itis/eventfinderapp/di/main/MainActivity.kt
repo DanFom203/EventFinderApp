@@ -46,12 +46,6 @@ class MainActivity : BaseActivity<MainViewModel>(){
         controller!!.addOnDestinationChangedListener { _, destination, _ ->
             handleBottomNavigationViewVisibility(destination)
         }
-
-//        viewBinding.menuBnv.setOnItemSelectedListener { item ->
-//            NavigationUI.onNavDestinationSelected(item, this.controller!!)
-//            return@setOnItemSelectedListener true
-//        }
-
     }
 
     private fun handleBottomNavigationViewVisibility(destination: NavDestination) {

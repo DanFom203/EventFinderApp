@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp"
+    android:paddingBottom="16dp"
+    android:background="@drawable/background_gradient"
+    tools:context=".presentation.screens.profile.ProfileFragment">
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/profile"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:fontFamily="@font/ibm_plex_mono_medium"
+        android:background="@color/lightYellow"
+        android:gravity="center"
+        android:layout_marginTop="20dp"/>
+
+    <!-- Изображение аватара -->
+    <ImageView
+        android:id="@+id/avatar_iv"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/no_avatar"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/avatar_image"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Имя пользователя -->
+    <TextView
+        android:id="@+id/username_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/username"
+        android:fontFamily="@font/ibm_plex_mono_medium"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp" />
+
+    <!-- Адрес электронной почты -->
+    <TextView
+        android:id="@+id/email_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        android:fontFamily="@font/ibm_plex_mono"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp" />
+
+        <!-- Кнопка "Изменить учетные данные" -->
+    <Button
+        android:id="@+id/change_credentials_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/change_credentials"
+        android:fontFamily="@font/ibm_plex_mono"
+        android:backgroundTint="@color/yellow"
+        android:layout_marginTop="16dp" />
+
+    <!-- Кнопка "Избранные события" -->
+    <Button
+        android:id="@+id/favourite_events_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ibm_plex_mono"
+        android:backgroundTint="@color/yellow"
+        android:text="@string/favourite_events"
+        android:layout_marginTop="16dp" />
+
+    <!-- Кнопка "Выход" -->
+    <Button
+        android:id="@+id/logout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ibm_plex_mono"
+        android:backgroundTint="@color/yellow"
+        android:text="@string/logout"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>
