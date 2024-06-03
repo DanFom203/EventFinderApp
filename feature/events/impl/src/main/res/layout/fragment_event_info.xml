@@ -22,28 +22,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
-        <Button
-            android:id="@+id/comments_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/comments_btn"
-            android:fontFamily="@font/ibm_plex_mono"
-            android:backgroundTint="@color/yellow"
-            app:layout_constraintStart_toEndOf="@id/go_back_button"
-            app:layout_constraintEnd_toStartOf="@id/favorite_button_label"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginHorizontal="8dp" />
-
-        <ImageView
-            android:id="@+id/favorite_button_label"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/add_to_favourites"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
-
         <ImageButton
             android:id="@+id/add_favorite_button"
             android:layout_width="50dp"

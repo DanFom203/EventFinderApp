@@ -16,7 +16,6 @@ import com.example.feature.profile.impl.di.ProfileFeatureComponent
 import com.example.feature.profile.impl.presentation.model.ProfileUserUiModel
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.itis.common.base.BaseFragment
-import com.itis.common.core.resources.ResourceManager
 import com.itis.common.di.FeatureUtils
 import com.itis.common.utils.CityFormatter
 import com.itis.common.utils.gone
@@ -28,9 +27,6 @@ import javax.inject.Inject
 class ProfileFragment : BaseFragment<ProfileViewModel>(R.layout.fragment_user_profile) {
 
     private val viewBinding: FragmentUserProfileBinding by viewBinding(FragmentUserProfileBinding::bind)
-
-    @Inject
-    lateinit var resManager: ResourceManager
 
     @Inject
     lateinit var cityFormatter: CityFormatter

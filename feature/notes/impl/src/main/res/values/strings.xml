@@ -13,4 +13,5 @@
     <string name="delete_note">Delete Note</string>
     <string name="save_note">Save Note</string>
     <string name="exit">Exit</string>
+    <string name="click_on_the_button_in_the_lower_right_corner_of_the_screen_to_create_your_first_note">Click on the button in the lower right corner of the screen to create your first note</string>
 </resources>

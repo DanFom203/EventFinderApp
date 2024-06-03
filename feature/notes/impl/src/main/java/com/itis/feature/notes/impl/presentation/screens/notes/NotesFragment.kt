@@ -66,6 +66,12 @@ class NotesFragment: BaseFragment<NotesViewModel>(R.layout.fragment_notes) {
                             openAddNoteScreen()
                         }
                         loadingProgressBar.gone()
+
+                        if (it.isEmpty()) {
+                            emptyNotesTv.show()
+                        } else {
+                            emptyNotesTv.gone()
+                        }
                     }
                 }
             }

@@ -1,9 +1,11 @@
 package com.itis.eventfinderapp.navigation
 
+import android.content.Intent
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
 import com.example.feature.profile.impl.utils.ProfileFeatureRouter
 import com.itis.eventfinderapp.R
+import com.itis.eventfinderapp.di.main.MainActivity
 import com.itis.feature.auth.impl.utils.UsersAuthRouter
 import com.itis.feature.events.impl.presentation.model.EventUiModel
 import com.itis.feature.events.impl.presentation.screens.event_info.EventInfoFragment
@@ -116,14 +118,10 @@ class Navigator : UsersAuthRouter, EventsFeatureRouter, NotesFeatureRouter, Prof
     }
 
     override fun openInitialScreenFromProfileScreen() {
-        val navOptions = NavOptions.Builder()
-            .setPopUpTo(R.id.profileFragment, true)
-            .build()
-        navController?.navigate(
-            R.id.action_profileFragment_to_initialFragment,
-            null,
-            navOptions
-        )
+        val context = navController?.context ?: return
+        val intent = Intent(context, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        context.startActivity(intent)
     }
 
     override fun openFavouriteEventsFromProfileScreen() {
