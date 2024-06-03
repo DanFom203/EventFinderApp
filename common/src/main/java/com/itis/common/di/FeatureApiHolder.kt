@@ -40,6 +40,5 @@ abstract class FeatureApiHolder(
 
     protected abstract fun initializeDependencies(): Any
 
-    protected fun destroyDependencies() {
-    }
+    protected fun destroyDependencies() {}
 }

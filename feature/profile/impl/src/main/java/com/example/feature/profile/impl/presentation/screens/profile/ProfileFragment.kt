@@ -94,6 +94,7 @@ class ProfileFragment : BaseFragment<ProfileViewModel>(R.layout.fragment_user_pr
             Glide.with(requireContext())
                 .load(profileData.avatar)
                 .placeholder(R.drawable.placeholder_loading)
+                .error(R.drawable.error)
                 .into(avatarIv)
         }
     }

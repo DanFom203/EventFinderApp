@@ -13,7 +13,7 @@ class MainViewModel @Inject constructor(
     private val preferencesImpl: PreferencesImpl
 ) : BaseViewModel() {
     private val preferenceChangeListener =
-        SharedPreferences.OnSharedPreferenceChangeListener { sharedPreferences, key ->
+        SharedPreferences.OnSharedPreferenceChangeListener { _, _ ->
             updateBottomNavigationView()
         }
     init {
@@ -23,7 +23,7 @@ class MainViewModel @Inject constructor(
     val sharedPreferencesFlow: MutableStateFlow<AsyncResult<Boolean>?>
         get() = _sharedPreferencesFlow
 
-    fun updateBottomNavigationView() {
+    private fun updateBottomNavigationView() {
         viewModelScope.launch {
             try {
                 val authStatus = preferencesImpl.getAutStatus()

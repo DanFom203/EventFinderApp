@@ -33,7 +33,6 @@ interface KudagoApi {
 
 /*
 1 request example:
-
 https://kudago.com/public-api/v1.4/events/?
 actual_since=2024-05-14T14%3A40%3A22.260Z
 &lang=ru
