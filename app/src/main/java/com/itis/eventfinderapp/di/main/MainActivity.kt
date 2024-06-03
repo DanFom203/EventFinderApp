@@ -56,7 +56,10 @@ class MainActivity : BaseActivity<MainViewModel>(){
             R.id.splashScreenFragment,
             R.id.initialFragment,
             R.id.signInFragment,
-            R.id.signUpFragment -> false
+            R.id.signUpFragment,
+            R.id.addNoteFragment,
+            R.id.changeCredentialsFragment,
+            R.id.favouriteEventsFragment -> false
             else -> true
         }
 

@@ -9,7 +9,6 @@ import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.bumptech.glide.Glide
 import com.itis.common.base.BaseFragment
-import com.itis.common.core.resources.ResourceManager
 import com.itis.common.di.FeatureUtils
 import com.itis.common.utils.CityFormatter
 import com.itis.common.utils.Constants
@@ -30,9 +29,6 @@ import javax.inject.Inject
 class EventInfoFragment: BaseFragment<EventInfoViewModel>(R.layout.fragment_event_info) {
 
     private val viewBinding: FragmentEventInfoBinding by viewBinding(FragmentEventInfoBinding::bind)
-
-    @Inject
-    lateinit var resManager: ResourceManager
 
     @Inject
     lateinit var dateFormatter: DateFormatter
@@ -57,7 +53,6 @@ class EventInfoFragment: BaseFragment<EventInfoViewModel>(R.layout.fragment_even
 
     override suspend fun subscribe(viewModel: EventInfoViewModel) {
         with(viewModel) {
-
             currentEventInfoFlow.observe { eventData ->
                 eventData?.let {
                     changeAddToFavouritesBtnStatus(eventData.isLiked)
@@ -81,6 +76,8 @@ class EventInfoFragment: BaseFragment<EventInfoViewModel>(R.layout.fragment_even
 
     private fun setImages(eventData: EventInfoUiModel) {
         val imagesContainer: LinearLayout = viewBinding.imagesContainer
+        imagesContainer.removeAllViews()
+
         val eventImages = eventData.images
 
         val imageWidth = resources.getDimensionPixelSize(R.dimen.event_image_width)
@@ -106,6 +103,7 @@ class EventInfoFragment: BaseFragment<EventInfoViewModel>(R.layout.fragment_even
         }
     }
 
+
     private fun changeAddToFavouritesBtnStatus(isChecked: Boolean) {
         with(viewBinding) {
             if (isChecked) {
@@ -122,23 +120,23 @@ class EventInfoFragment: BaseFragment<EventInfoViewModel>(R.layout.fragment_even
         with(viewBinding) {
             title.text = eventData.title
             address.text = buildString {
-                append(resManager.getString(R.string.event_address))
+                append(getString(R.string.event_address))
                 append(" ")
                 append(eventData.address)
             }
             location.text = buildString {
-                append(resManager.getString(R.string.event_location))
+                append(getString(R.string.event_location))
                 append(" ")
                 append(cityFormatter.abbreviationToCity(eventData.location))
             }
             description.text = buildString {
-                append(resManager.getString(R.string.event_description_label))
+                append(getString(R.string.event_description_label))
                 append("\n")
                 append("  ")
                 append(descriptionFormatter.format(eventData.description))
             }
             categoriesLabel.text = buildString {
-                append(resManager.getString(R.string.categories))
+                append(getString(R.string.categories))
                 append(" ")
                 eventData.categories.forEach { category ->
                     append(category)
@@ -146,33 +144,33 @@ class EventInfoFragment: BaseFragment<EventInfoViewModel>(R.layout.fragment_even
                 }
             }
             startDate.text = buildString {
-                append(resManager.getString(R.string.start_date))
+                append(getString(R.string.start_date))
                 append(" ")
                 append(dateFormatter.verifyStartDate(eventData.startDate))
             }
             endDate.text = buildString {
-                append(resManager.getString(R.string.end_date))
+                append(getString(R.string.end_date))
                 append(" ")
                 append(dateFormatter.verifyEndDate(eventData.endDate))
             }
             ageRestriction.text = buildString {
-                append(resManager.getString(R.string.age_restriction))
+                append(getString(R.string.age_restriction))
                 append(" ")
                 append(eventData.ageRestriction)
             }
             isFree.text = buildString {
-                append(resManager.getString(R.string.is_free))
+                append(getString(R.string.is_free))
                 append(" ")
                 append(eventData.isFree)
             }
-            imagesLabel.text = resManager.getString(R.string.images)
+            imagesLabel.text = getString(R.string.images)
             favoritesCount.text = buildString {
-                append(resManager.getString(R.string.favorites_count))
+                append(getString(R.string.favorites_count))
                 append(" ")
                 append(eventData.favoritesCount)
             }
             commentsCount.text = buildString {
-                append(resManager.getString(R.string.comments_count))
+                append(getString(R.string.comments_count))
                 append(" ")
                 append(eventData.commentsCount)
             }

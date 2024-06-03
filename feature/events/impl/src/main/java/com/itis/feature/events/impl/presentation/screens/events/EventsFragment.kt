@@ -35,8 +35,7 @@ class EventsFragment : BaseFragment<EventsViewModel>(R.layout.fragment_events) {
     lateinit var dateFormatter: DateFormatter
 
     override fun initViews() {
-        val location = "kzn"
-        viewModel.initialize(location = location)
+        viewModel.initialize()
         with(viewBinding) {
             loadingProgressBar.show()
             eventsAdapter = EventsAdapter(
@@ -45,6 +44,8 @@ class EventsFragment : BaseFragment<EventsViewModel>(R.layout.fragment_events) {
                 glide = Glide.with(requireContext()),
                 dateFormatter = dateFormatter
             )
+            val layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+            eventsRv.layoutManager = layoutManager
             eventsRv.adapter = eventsAdapter
         }
         setupSearchView()
@@ -72,7 +73,9 @@ class EventsFragment : BaseFragment<EventsViewModel>(R.layout.fragment_events) {
 
     override fun inject() {
         FeatureUtils.getFeature<EventsFeatureComponent>(this, EventsFeatureApi::class.java)
-            .eventsComponentFactory().create(this).inject(this)
+            .eventsComponentFactory()
+            .create(this)
+            .inject(this)
     }
 
     override suspend fun subscribe(viewModel: EventsViewModel) {
@@ -81,9 +84,6 @@ class EventsFragment : BaseFragment<EventsViewModel>(R.layout.fragment_events) {
             currentEventsFlow.observe { eventsData ->
                 eventsData?.let {
                     with(viewBinding) {
-                        val layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-                        eventsRv.layoutManager = layoutManager
-                        eventsRv.adapter = eventsAdapter
                         originalEventsList = it.events
                         eventsAdapter?.submitList(originalEventsList)
                         loadingProgressBar.gone()

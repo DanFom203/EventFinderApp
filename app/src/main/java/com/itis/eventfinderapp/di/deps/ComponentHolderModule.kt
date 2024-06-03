@@ -1,5 +1,7 @@
 package com.itis.eventfinderapp.di.deps
 
+import com.example.feature.profile.api.di.ProfileFeatureApi
+import com.example.feature.profile.impl.di.ProfileFeatureHolder
 import com.itis.common.di.FeatureApiHolder
 import com.itis.common.di.FeatureContainer
 import com.itis.common.di.scope.ApplicationScope
@@ -37,4 +39,8 @@ interface ComponentHolderModule {
     @[IntoMap ClassKey(NotesFeatureApi::class)]
     fun provideNotesFeatureHolder(notesFeatureHolder: NotesFeatureHolder): FeatureApiHolder
 
+    @ApplicationScope
+    @Binds
+    @[IntoMap ClassKey(ProfileFeatureApi::class)]
+    fun provideProfileFeatureHolder(profileFeatureHolder: ProfileFeatureHolder): FeatureApiHolder
 }

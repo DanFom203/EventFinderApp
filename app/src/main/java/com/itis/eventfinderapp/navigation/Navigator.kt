@@ -1,6 +1,8 @@
 package com.itis.eventfinderapp.navigation
 
 import androidx.navigation.NavController
+import androidx.navigation.NavOptions
+import com.example.feature.profile.impl.utils.ProfileFeatureRouter
 import com.itis.eventfinderapp.R
 import com.itis.feature.auth.impl.utils.UsersAuthRouter
 import com.itis.feature.events.impl.presentation.model.EventUiModel
@@ -8,7 +10,7 @@ import com.itis.feature.events.impl.presentation.screens.event_info.EventInfoFra
 import com.itis.feature.events.impl.utils.EventsFeatureRouter
 import com.itis.feature.notes.impl.utils.NotesFeatureRouter
 
-class Navigator : UsersAuthRouter, EventsFeatureRouter, NotesFeatureRouter {
+class Navigator : UsersAuthRouter, EventsFeatureRouter, NotesFeatureRouter, ProfileFeatureRouter {
 
     private var navController: NavController? = null
 
@@ -39,15 +41,36 @@ class Navigator : UsersAuthRouter, EventsFeatureRouter, NotesFeatureRouter {
     }
 
     override fun openInitialFromSplashScreen() {
-        navController?.navigate(R.id.action_splashScreenFragment_to_initialFragment)
+        val navOptions = NavOptions.Builder()
+            .setPopUpTo(R.id.splashScreenFragment, true)
+            .build()
+        navController?.navigate(
+            R.id.action_splashScreenFragment_to_initialFragment,
+            null,
+            navOptions
+        )
     }
 
     override fun openEventsScreenFromSignIn() {
-        navController?.navigate(R.id.action_signInFragment_to_eventsFragment)
+        val navOptions = NavOptions.Builder()
+            .setPopUpTo(R.id.signInFragment, true)
+            .build()
+        navController?.navigate(
+            R.id.action_signInFragment_to_eventsFragment,
+            null,
+            navOptions
+        )
     }
 
     override fun openEventsScreenFromSplashScreen() {
-        navController?.navigate(R.id.action_splashScreenFragment_to_eventsFragment)
+        val navOptions = NavOptions.Builder()
+            .setPopUpTo(R.id.splashScreenFragment, true)
+            .build()
+        navController?.navigate(
+            R.id.action_splashScreenFragment_to_eventsFragment,
+            null,
+            navOptions
+        )
     }
 
     override fun openEventInfoScreenFromEventsScreen(eventUiModel: EventUiModel) {
@@ -59,7 +82,20 @@ class Navigator : UsersAuthRouter, EventsFeatureRouter, NotesFeatureRouter {
         )
     }
 
+    override fun openEventInfoScreenFromFavouriteEventsScreen(eventUiModel: EventUiModel) {
+        navController?.navigate(
+            R.id.action_favouriteEventsFragment_to_eventInfoFragment,
+            EventInfoFragment.createBundle(
+                eventId = eventUiModel.id
+            )
+        )
+    }
+
     override fun openEventsScreenFromEventInfoScreen() {
+        navController?.popBackStack()
+    }
+
+    override fun openProfileScreenFromFavouriteEventsScreen() {
         navController?.popBackStack()
     }
 
@@ -69,5 +105,28 @@ class Navigator : UsersAuthRouter, EventsFeatureRouter, NotesFeatureRouter {
 
     override fun openNotesScreenFromAddNotesScreen() {
         navController?.popBackStack()
+    }
+
+    override fun openChangeCredentialsScreenFromProfileScreen() {
+        navController?.navigate(R.id.action_profileFragment_to_changeCredentialsFragment)
+    }
+
+    override fun openProfileScreenFromChangeCredentialsScreen() {
+        navController?.popBackStack()
+    }
+
+    override fun openInitialScreenFromProfileScreen() {
+        val navOptions = NavOptions.Builder()
+            .setPopUpTo(R.id.profileFragment, true)
+            .build()
+        navController?.navigate(
+            R.id.action_profileFragment_to_initialFragment,
+            null,
+            navOptions
+        )
+    }
+
+    override fun openFavouriteEventsFromProfileScreen() {
+        navController?.navigate(R.id.action_profileFragment_to_favouriteEventsFragment)
     }
 }

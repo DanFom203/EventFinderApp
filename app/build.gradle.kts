@@ -68,6 +68,8 @@ dependencies {
     implementation(libs.firebase.auth)
     //firebase-firestore-database
     implementation(libs.firebase.firestore)
+    //firebase-storage
+    implementation(libs.firebase.storage)
     //loggingInterceptor
     implementation(libs.logging.interceptor)
 

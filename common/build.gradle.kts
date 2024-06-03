@@ -50,6 +50,8 @@ dependencies {
     implementation(libs.firebase.auth)
     //firebase-firestore-database
     implementation(libs.firebase.firestore)
+    //firebase-storage
+    implementation(libs.firebase.storage)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

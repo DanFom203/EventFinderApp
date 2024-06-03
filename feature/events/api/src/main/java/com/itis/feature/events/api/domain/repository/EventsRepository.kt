@@ -9,4 +9,14 @@ interface EventsRepository {
 
     suspend fun getEventInfo(eventId: Int): EventInfoResponse
 
+    suspend fun getFavouriteEvents(): EventsListResponse
+
+    suspend fun existsInFirestoreDb(eventId: Int): Boolean
+
+    suspend fun deleteFromFirestoreDb(eventId: Int)
+
+    suspend fun saveToFirestoreDb(eventId: Int)
+
+    suspend fun getUserLocation(): String
+
 }

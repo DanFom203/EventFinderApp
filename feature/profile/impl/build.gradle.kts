@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.jetbrainsKotlinKapt)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -49,6 +50,14 @@ dependencies {
     implementation(libs.firebase.auth)
     //firebase-firestore-database
     implementation(libs.firebase.firestore)
+    //firebase-storage
+    implementation(libs.firebase.storage)
+    //glide
+    implementation(libs.glide)
+    //circle-image-view
+    implementation(libs.circle.image.view)
+    //image-picker
+    implementation("com.github.dhaval2404:imagepicker:2.1")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

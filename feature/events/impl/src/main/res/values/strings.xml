@@ -31,5 +31,7 @@
     <string name="added_to_favourites">Added To Favourites</string>
     <string name="back">Back</string>
     <string name="evert_image">Evert Image</string>
+    <string name="favourite_events">Favourite Events</string>
+    <string name="exit">Exit</string>
 
 </resources>

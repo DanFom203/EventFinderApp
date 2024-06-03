@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Errors -->
+    <string name="unknown_error">Unknown error</string>
+    <string name="wrong_item_type">Wrong item type</string>
+
+    <!--    Xml string resources-->
     <string name="profile">Profile</string>
     <string name="logout">Logout</string>
     <string name="favourite_events">Favourite Events</string>
@@ -7,4 +12,37 @@
     <string name="email">Email</string>
     <string name="username">Username</string>
     <string name="avatar_image">Avatar Image</string>
+    <string name="city">City</string>
+    <string name="username_label">Username:</string>
+    <string name="email_label">Email:</string>
+    <string name="city_label">City:</string>
+    <string name="password">Password</string>
+    <string name="change_password_label">Change Password Here:</string>
+    <string name="change_city_label">Change City Here:</string>
+    <string name="change_email_label">Change Email Here:</string>
+    <string name="change_username_label">Change Username Here:</string>
+    <string name="save_new_credentials">Save New Credentials</string>
+    <string name="exit">Exit</string>
+    <string name="your_registered_email">Your Registered Email</string>
+    <string name="reset_password_link_will_be_sent_to_your_email">Reset Password link will be sent to your email</string>
+    <string name="success_update">Credentials have been successfully changed</string>
+    <string name="password_reset">password_reset</string>
+    <string name="username_city_update">username_city_update</string>
+    <string name="you_cannot_change_the_password_if_you_have_been_authenticated_a_very_long_time_ago">You cannot change the password if you have been authenticated a very long time ago.</string>
+
+    <string-array name="cities_change_list">
+        <item>Do Not Change</item>
+        <item>Казань</item>
+        <item>Москва</item>
+        <item>Санкт-Петербург</item>
+        <item>Новосибирск</item>
+        <item>Екатеринбург</item>
+        <item>Нижний Новгород</item>
+        <item>Выборг</item>
+        <item>Самара</item>
+        <item>Краснодар</item>
+        <item>Сочи</item>
+        <item>Уфа</item>
+        <item>Красноярск</item>
+    </string-array>
 </resources>

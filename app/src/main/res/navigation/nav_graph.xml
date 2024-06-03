@@ -80,4 +80,33 @@
         android:name="com.itis.feature.notes.impl.presentation.screens.add_note.AddNoteFragment"
         android:label="AddNoteFragment"
         tools:layout="@layout/fragment_add_note" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.feature.profile.impl.presentation.screens.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_user_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_changeCredentialsFragment"
+            app:destination="@id/changeCredentialsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_initialFragment"
+            app:destination="@id/initialFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_favouriteEventsFragment"
+            app:destination="@id/favouriteEventsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeCredentialsFragment"
+        android:name="com.example.feature.profile.impl.presentation.screens.change_credentials.ChangeCredentialsFragment"
+        android:label="ChangeCredentialsFragment"
+        tools:layout="@layout/fragment_change_credentials"/>
+    <fragment
+        android:id="@+id/favouriteEventsFragment"
+        android:name="com.itis.feature.events.impl.presentation.screens.favourite_events.FavouriteEventsFragment"
+        android:label="FavouriteEventsFragment"
+        tools:layout="@layout/fragment_favourite_events" >
+        <action
+            android:id="@+id/action_favouriteEventsFragment_to_eventInfoFragment"
+            app:destination="@id/eventInfoFragment" />
+    </fragment>
 </navigation>

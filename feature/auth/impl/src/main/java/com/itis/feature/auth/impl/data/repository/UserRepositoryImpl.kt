@@ -31,7 +31,13 @@ class UserRepositoryImpl @Inject constructor(
                     val user = auth.currentUser
                     // User account created
                     saveToFirestoreDb(user!!.uid, username, email, city)
-                    continuation.resume(User(user.uid, username, email, city))
+                    continuation.resume(
+                        User(
+                            userId = user.uid,
+                            avatar = null,
+                            username = username,
+                            email = email,
+                            city = city))
                 } else {
                     // Sign up failed
                     continuation.resumeWithException(
@@ -62,6 +68,7 @@ class UserRepositoryImpl @Inject constructor(
                                     continuation.resume(
                                         User(
                                             userId = user.uid,
+                                            avatar = null,
                                             username = dbUsername,
                                             email = email,
                                             city = dbCity
@@ -95,6 +102,7 @@ class UserRepositoryImpl @Inject constructor(
     private fun saveToFirestoreDb(userId: String, username: String, email: String, city: String) {
         val dbUser = User(
             userId = userId,
+            avatar = null,
             username = username,
             email = email,
             city = city

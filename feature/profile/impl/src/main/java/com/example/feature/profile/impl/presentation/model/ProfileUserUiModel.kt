@@ -1,6 +1,6 @@
 package com.example.feature.profile.impl.presentation.model
 
-class ProfileUserUiModel(
+data class ProfileUserUiModel(
     val userId: String,
     val avatar: String?,
     val username: String,

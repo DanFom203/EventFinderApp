@@ -11,10 +11,12 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import com.itis.common.utils.runCatching
+import com.itis.feature.events.impl.domain.usecase.GetCurrentLocationUseCase
 import com.itis.feature.events.impl.presentation.model.EventUiModel
 
 class EventsViewModel (
     private val getCurrentEventsUseCase: GetCurrentEventsUseCase,
+    private val getCurrentLocationUseCase: GetCurrentLocationUseCase,
     private val router: EventsFeatureRouter,
     private val exceptionHandlerDelegate: ExceptionHandlerDelegate
 ) : BaseViewModel() {
@@ -25,9 +27,10 @@ class EventsViewModel (
 
     val errorsChannel = Channel<Throwable>()
 
-    fun initialize(location: String) {
+    fun initialize() {
         viewModelScope.launch {
             runCatching(exceptionHandlerDelegate) {
+                val location = getCurrentLocationUseCase.invoke()
                 getCurrentEventsUseCase.invoke(location = location)
             }.onSuccess {
                 _currentEventsFlow.value = it

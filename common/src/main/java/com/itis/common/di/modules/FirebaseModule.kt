@@ -2,6 +2,7 @@ package com.itis.common.di.modules
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 import com.itis.common.di.scope.ApplicationScope
 import dagger.Module
 import dagger.Provides
@@ -14,5 +15,9 @@ class FirebaseModule {
 
     @ApplicationScope
     @Provides
-    fun provideStorage(): FirebaseFirestore = FirebaseFirestore.getInstance()
+    fun provideFirestore(): FirebaseFirestore = FirebaseFirestore.getInstance()
+
+    @ApplicationScope
+    @Provides
+    fun provideStorage(): FirebaseStorage = FirebaseStorage.getInstance()
 }

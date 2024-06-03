@@ -1,5 +1,6 @@
 package com.itis.eventfinderapp.di.app
 
+import com.example.feature.profile.impl.utils.ProfileFeatureRouter
 import com.itis.common.di.scope.ApplicationScope
 import com.itis.eventfinderapp.navigation.Navigator
 import com.itis.feature.auth.impl.utils.UsersAuthRouter
@@ -26,4 +27,8 @@ class NavigationModule {
     @ApplicationScope
     @Provides
     fun provideNotesRouter(navigator: Navigator): NotesFeatureRouter = navigator
+
+    @ApplicationScope
+    @Provides
+    fun provideProfileRouter(navigator: Navigator): ProfileFeatureRouter = navigator
 }

@@ -15,6 +15,13 @@ interface KudagoApi {
         @Query("fields") fields: String = "id,title,dates,description,age_restriction,is_free,images,favorites_count,comments_count"
     ): EventsListResponse
 
+    @GET("events")
+    suspend fun getFavouriteEvents (
+        @Query("lang") lang: String = "ru",
+        @Query("ids") ids: String,
+        @Query("fields") fields: String = "id,title,dates,description,age_restriction,is_free,images,favorites_count,comments_count"
+    ): EventsListResponse
+
     @GET("events/{event_id}")
     suspend fun getEventInfo (
         @Path("event_id") eventId: Int,

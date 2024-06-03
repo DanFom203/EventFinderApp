@@ -4,12 +4,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.feature.profile.impl.domain.usecase.GetUserProfileInfoUseCase
+import com.example.feature.profile.impl.domain.usecase.LogoutUserUseCase
+import com.example.feature.profile.impl.domain.usecase.UpdateUserProfilePictureUseCase
 import com.example.feature.profile.impl.presentation.screens.profile.ProfileViewModel
 import com.example.feature.profile.impl.utils.ProfileFeatureRouter
 import com.itis.common.di.viewmodel.ViewModelKey
 import com.itis.common.di.viewmodel.ViewModelModule
-import com.itis.common.utils.CityFormatter
-import com.itis.common.utils.CredentialsValidator
 import com.itis.common.utils.ExceptionHandlerDelegate
 import dagger.Module
 import dagger.Provides
@@ -32,12 +32,18 @@ class ProfileModule {
     @Provides
     @[IntoMap ViewModelKey(ProfileViewModel::class)]
     fun provideProfileViewModel(
-        useCase: GetUserProfileInfoUseCase,
+        getUserProfileInfoUseCase: GetUserProfileInfoUseCase,
+        logoutUserUseCase: LogoutUserUseCase,
+        updateUserProfilePictureUseCase: UpdateUserProfilePictureUseCase,
         router: ProfileFeatureRouter,
-        exceptionHandlerDelegate: ExceptionHandlerDelegate,
-        credentialsValidator: CredentialsValidator,
-        cityFormatter: CityFormatter
+        exceptionHandlerDelegate: ExceptionHandlerDelegate
     ): ViewModel {
-        return ProfileViewModel(useCase,router, exceptionHandlerDelegate, credentialsValidator, cityFormatter)
+        return ProfileViewModel(
+            getUserProfileInfoUseCase,
+            logoutUserUseCase,
+            updateUserProfilePictureUseCase,
+            router,
+            exceptionHandlerDelegate
+        )
     }
 }

@@ -17,4 +17,7 @@
     <string name="error_empty_city">City field cannot be empty</string>
     <string name="error_invalid_password">Password must be at least 6 characters long</string>
     <string name="error_invalid_username">Username must be at least 2 characters long</string>
+
+    <!--    CredentialsUpdateException-->
+    <string name="error_empty_data">Unable to update credentials with empty data</string>
 </resources>

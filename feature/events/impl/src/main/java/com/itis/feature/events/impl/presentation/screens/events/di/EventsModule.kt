@@ -7,6 +7,7 @@ import com.itis.common.di.viewmodel.ViewModelKey
 import com.itis.common.di.viewmodel.ViewModelModule
 import com.itis.common.utils.ExceptionHandlerDelegate
 import com.itis.feature.events.impl.domain.usecase.GetCurrentEventsUseCase
+import com.itis.feature.events.impl.domain.usecase.GetCurrentLocationUseCase
 import com.itis.feature.events.impl.presentation.screens.events.EventsViewModel
 import com.itis.feature.events.impl.utils.EventsFeatureRouter
 import dagger.Module
@@ -27,10 +28,11 @@ class EventsModule {
     @Provides
     @[IntoMap ViewModelKey(EventsViewModel::class)]
     fun provideEventsViewModel (
-        useCase: GetCurrentEventsUseCase,
+        getCurrentEventsUseCase: GetCurrentEventsUseCase,
+        getCurrentLocationUseCase: GetCurrentLocationUseCase,
         router: EventsFeatureRouter,
         exceptionHandlerDelegate: ExceptionHandlerDelegate
     ): ViewModel {
-        return EventsViewModel(useCase,router,exceptionHandlerDelegate)
+        return EventsViewModel(getCurrentEventsUseCase, getCurrentLocationUseCase, router, exceptionHandlerDelegate)
     }
 }
