@@ -44,6 +44,8 @@ dependencies {
     api(project(":common"))
     api(project(":feature:auth:api"))
     api(project(":feature:auth:impl"))
+    api(project(":feature:biometrics:api"))
+    api(project(":feature:biometrics:impl"))
     api(project(":feature:events:api"))
     api(project(":feature:events:impl"))
     api(project(":feature:kudago:api"))

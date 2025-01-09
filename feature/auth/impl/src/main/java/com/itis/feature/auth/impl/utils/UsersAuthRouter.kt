@@ -13,5 +13,7 @@ interface UsersAuthRouter {
 
     fun openEventsScreenFromSignIn()
 
-    fun openEventsScreenFromSplashScreen()
+//    fun openEventsScreenFromSplashScreen()
+
+    fun openBiometricsAuthFromSplashScreen()
 }

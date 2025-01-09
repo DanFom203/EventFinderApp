@@ -29,7 +29,10 @@ class SplashScreenViewModel(
     fun openInitial(){
         router.openInitialFromSplashScreen()
     }
-    fun openEventsScreen(){
-        router.openEventsScreenFromSplashScreen()
+//    fun openEventsScreen(){
+//        router.openEventsScreenFromSplashScreen()
+//    }
+    fun openBiometricsAuthScreen(){
+        router.openBiometricsAuthFromSplashScreen()
     }
 }

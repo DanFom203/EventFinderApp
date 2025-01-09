@@ -15,8 +15,8 @@
             android:id="@+id/action_splashScreenFragment_to_initialFragment"
             app:destination="@id/initialFragment" />
         <action
-            android:id="@+id/action_splashScreenFragment_to_eventsFragment"
-            app:destination="@id/eventsFragment" />
+            android:id="@+id/action_splashScreenFragment_to_biometricsAuthFragment"
+            app:destination="@id/biometricsAuthFragment" />
     </fragment>
     <fragment
         android:id="@+id/initialFragment"
@@ -108,5 +108,17 @@
         <action
             android:id="@+id/action_favouriteEventsFragment_to_eventInfoFragment"
             app:destination="@id/eventInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/biometricsAuthFragment"
+        android:name="com.itis.feature.biometrics.impl.presentation.screens.BiometricsAuthFragment"
+        android:label="BiometricsAuthFragment"
+        tools:layout="@layout/fragment_biometrics_auth" >
+        <action
+            android:id="@+id/action_biometricsAuthFragment_to_eventsFragment"
+            app:destination="@id/eventsFragment" />
+        <action
+            android:id="@+id/action_biometricsAuthFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
     </fragment>
 </navigation>

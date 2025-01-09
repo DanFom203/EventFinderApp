@@ -22,6 +22,7 @@ loggingVersion = "4.12.0"
 glideVersion = "4.15.1"
 roomVersion = "2.6.1"
 circleImageViewVersion = "3.1.0"
+biometricVersion = "1.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -56,6 +57,7 @@ firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "roomVersion"}
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "roomVersion"}
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "roomVersion"}
+androidx-biometric-library = { group = "androidx.biometric", name = "biometric", version.ref = "biometricVersion"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

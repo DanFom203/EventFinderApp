@@ -12,6 +12,8 @@ import dagger.multibindings.ClassKey
 import dagger.multibindings.IntoMap
 import com.itis.feature.auth.api.di.AuthFeatureApi
 import com.itis.feature.auth.impl.di.AuthFeatureHolder
+import com.itis.feature.biometrics.api.di.BiometricsFeatureApi
+import com.itis.feature.biometrics.impl.di.BiometricsFeatureHolder
 import com.itis.feature.events.api.di.EventsFeatureApi
 import com.itis.feature.events.impl.di.EventsFeatureHolder
 import com.itis.feature.notes.api.di.NotesFeatureApi
@@ -28,6 +30,11 @@ interface ComponentHolderModule {
     @Binds
     @[IntoMap ClassKey(AuthFeatureApi::class)]
     fun provideUserFeatureHolder(userFeatureHolder: AuthFeatureHolder): FeatureApiHolder
+
+    @ApplicationScope
+    @Binds
+    @[IntoMap ClassKey(BiometricsFeatureApi::class)]
+    fun provideBiometricsFeatureHolder(biometricsFeatureHolder: BiometricsFeatureHolder): FeatureApiHolder
 
     @ApplicationScope
     @Binds
