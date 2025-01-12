@@ -59,7 +59,8 @@ class MainActivity : BaseActivity<MainViewModel>(){
             R.id.signUpFragment,
             R.id.addNoteFragment,
             R.id.changeCredentialsFragment,
-            R.id.favouriteEventsFragment -> false
+            R.id.favouriteEventsFragment,
+            R.id.biometricsAuthFragment -> false
             else -> true
         }
 
