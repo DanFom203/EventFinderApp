@@ -5,14 +5,9 @@ import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.itis.common.base.BaseActivity
-import com.itis.common.utils.AsyncResult
-import com.itis.common.utils.gone
-import com.itis.common.utils.show
 import com.itis.eventfinderapp.R
-import com.itis.eventfinderapp.databinding.ActivityMainBinding
 import com.itis.eventfinderapp.di.deps.findComponentDependencies
 import com.itis.eventfinderapp.di.main.di.MainComponent
 import com.itis.eventfinderapp.navigation.Navigator
@@ -22,7 +17,7 @@ class MainActivity : BaseActivity<MainViewModel>(){
 
     @Inject lateinit var navigator: Navigator
 
-    private val viewBinding: ActivityMainBinding by viewBinding(ActivityMainBinding::bind)
+//    private val viewBinding: ActivityMainBinding by viewBinding(ActivityMainBinding::bind)
     private var controller: NavController? = null
 
     override fun inject() {

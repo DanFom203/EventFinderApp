@@ -10,6 +10,8 @@
     <string name="no_biometric_features">No biometric features available on this device.</string>
     <string name="biometric_features_unavailable">Biometric features are currently unavailable.</string>
     <string name="biometric_not_set">Biometric features are not set.</string>
+    <string name="biometric_auth">Biometric Auth</string>
+    <string name="fingerprint_btn">fingerprint_btn</string>
 
     <!--    Xml string resources-->
 

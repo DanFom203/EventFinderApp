@@ -45,9 +45,6 @@ dependencies {
     implementation(platform(libs.compose.bom))
     //material3
     implementation(libs.androidx.material3)
-    // Android Studio Preview support
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    debugImplementation("androidx.compose.ui:ui-tooling")
     //dagger2
     implementation(libs.dagger)
     implementation(libs.androidx.lifecycle.runtime.android)

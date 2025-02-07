@@ -12,7 +12,7 @@
         android:id="@+id/tv_biometrics_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Biometric Auth"
+        android:text="@string/biometric_auth"
         android:textSize="32sp"
         android:textStyle="bold"
         android:fontFamily="@font/ibm_plex_mono_medium_compose"
@@ -24,7 +24,7 @@
         android:id="@+id/btn_fingerprint"
         android:layout_width="72dp"
         android:layout_height="72dp"
-        android:contentDescription="fingerprint_btn"
+        android:contentDescription="@string/fingerprint_btn"
         android:src="@drawable/ic_fingerprint"
         android:background="@null" />
 
