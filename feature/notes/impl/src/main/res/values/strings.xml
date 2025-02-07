@@ -6,9 +6,11 @@
 
     <!--    Xml string resources-->
     <string name="notes">Notes</string>
+    <string name="notes_screen">Notes Screen</string>
     <string name="note_title">Note Title</string>
     <string name="note_text">Note Text</string>
     <string name="date_and_time">Date And Time</string>
+    <string name="no_notes">No notes available. Click the button to add a new note.</string>
     <string name="add_note">Add Note</string>
     <string name="delete_note">Delete Note</string>
     <string name="save_note">Save Note</string>

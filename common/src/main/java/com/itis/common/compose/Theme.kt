@@ -71,22 +71,6 @@ private val DarkColors = darkColorScheme(
     scrim = md_theme_dark_scrim,
 )
 
-//data class AppResources(
-//    @DrawableRes val someDrawable: Int,
-//)
-//
-//val LocalAppResources = staticCompositionLocalOf<AppResources> {
-//    error("CompositionLocal LocalAppResources not present")
-//}
-//
-//val LightAppResources = AppResources(
-//    someDrawable = R.drawable.background_gradient_light
-//)
-//
-//val DarkAppResources = AppResources(
-//    someDrawable = R.drawable.background_gradient_dark
-//)
-
 @Composable
 fun AppTheme(
     useDarkTheme: Boolean =  isSystemInDarkTheme(),
@@ -96,8 +80,6 @@ fun AppTheme(
         useDarkTheme -> DarkColors
         else -> LightColors
     }
-
-//    val backgroundRes = if (useDarkTheme) DarkAppResources else LightAppResources
 
     MaterialTheme(
         colorScheme = colors,

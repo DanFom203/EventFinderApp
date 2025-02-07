@@ -30,6 +30,10 @@ class BiometricsAuthViewModel(
         }
     }
 
+    fun openSignInScreen() {
+        router.openSignInScreenFromBiometrics()
+    }
+
     fun openEventsScreen() {
         router.openEventsScreenFromBiometrics()
     }

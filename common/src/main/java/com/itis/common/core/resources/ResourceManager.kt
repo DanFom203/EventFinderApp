@@ -11,6 +11,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.PluralsRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
+import com.itis.common.R
 import javax.inject.Inject
 
 interface ResourceManager {

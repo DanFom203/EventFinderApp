@@ -8,13 +8,14 @@ import com.itis.common.utils.runCatching
 import com.itis.feature.notes.impl.domain.usecase.DeleteUsersNoteUseCase
 import com.itis.feature.notes.impl.domain.usecase.GetUsersNotesUseCase
 import com.itis.feature.notes.impl.presentation.model.NoteUiModel
+import com.itis.feature.notes.impl.presentation.screens.notes.intent.NotesIntent
+import com.itis.feature.notes.impl.presentation.screens.notes.state.NotesState
 import com.itis.feature.notes.impl.utils.NotesFeatureRouter
 import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
-class NotesViewModel (
+class NotesViewModel(
     private val getUsersNotesUseCase: GetUsersNotesUseCase,
     private val deleteUsersNoteUseCase: DeleteUsersNoteUseCase,
     private val router: NotesFeatureRouter,
@@ -22,39 +23,53 @@ class NotesViewModel (
     preferencesImpl: PreferencesImpl
 ) : BaseViewModel() {
 
-    private val _currentNotesFlow = MutableStateFlow<List<NoteUiModel>?>(null)
-    val currentNotesFlow: StateFlow<List<NoteUiModel>?>
-        get() = _currentNotesFlow
+    private val _state = MutableStateFlow<NotesState>(NotesState.Loading)
+    val state: StateFlow<NotesState> = _state
 
-    val errorsChannel = Channel<Throwable>()
+    private val _intentChannel = Channel<NotesIntent>(Channel.UNLIMITED)
+    val intentChannel = _intentChannel.receiveAsFlow()
 
     private val userId = preferencesImpl.getCurrentUserId()
 
-    fun initialize() {
+    init {
+        handleIntent()
+    }
+
+    fun sendIntent(intent: NotesIntent) {
         viewModelScope.launch {
-            runCatching(exceptionHandlerDelegate) {
-                getUsersNotesUseCase.invoke(userId = userId)
-            }.onSuccess {
-                _currentNotesFlow.value = it
-            }.onFailure {
-                errorsChannel.send(it)
+            _intentChannel.send(intent)
+        }
+    }
+
+    private fun handleIntent() {
+        viewModelScope.launch {
+            intentChannel.collect { intent ->
+                when (intent) {
+                    is NotesIntent.LoadNotes -> loadNotes()
+                    is NotesIntent.DeleteNote -> deleteNote(intent.creationTime)
+                    is NotesIntent.OpenAddNoteScreen -> router.openAddNoteScreenFromNotesScreen()
+                }
             }
         }
     }
 
-    fun deleteNote(creationTime: Long) {
-        viewModelScope.launch {
-            runCatching(exceptionHandlerDelegate) {
-                deleteUsersNoteUseCase.invoke(creationTime = creationTime)
-            }.onSuccess {
-                _currentNotesFlow.value = getUsersNotesUseCase.invoke(userId = userId)
-            }.onFailure {
-                errorsChannel.send(it)
-            }
+    private suspend fun loadNotes() {
+        runCatching(exceptionHandlerDelegate) {
+            getUsersNotesUseCase.invoke(userId = userId)
+        }.onSuccess { notes ->
+            _state.value = if (notes.isNotEmpty()) NotesState.Success(notes) else NotesState.Empty
+        }.onFailure {
+            _state.value = NotesState.Error(it.message ?: "Unknown error")
         }
     }
 
-    fun openAddNoteScreen() {
-        router.openAddNoteScreenFromNotesScreen()
+    private suspend fun deleteNote(creationTime: Long) {
+        runCatching(exceptionHandlerDelegate) {
+            deleteUsersNoteUseCase.invoke(creationTime)
+        }.onSuccess {
+            loadNotes()
+        }.onFailure {
+            _state.value = NotesState.Error(it.message ?: "Failed to delete note")
+        }
     }
 }

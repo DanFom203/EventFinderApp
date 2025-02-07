@@ -53,14 +53,15 @@ dependencies {
     //dagger2
     implementation(libs.dagger)
     "kapt"(libs.dagger.compiler)
-    //viewBindingDelegateByKirich1409
-    implementation(libs.viewbindingpropertydelegate.noreflection)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
 
     testImplementation(libs.junit)
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlin.test.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }

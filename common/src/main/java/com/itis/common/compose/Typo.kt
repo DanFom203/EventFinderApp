@@ -10,14 +10,14 @@ import com.itis.common.R
 
 val typography = Typography(
     headlineSmall = TextStyle(
-        fontWeight = FontWeight.SemiBold,
+        fontWeight = FontWeight.Bold,
         fontFamily = FontFamily(Font(R.font.ibm_plex_mono_medium_compose)),
         fontSize = 24.sp,
-        lineHeight = 32.sp,
+        lineHeight = 24.sp,
         letterSpacing = 0.sp
     ),
     titleLarge = TextStyle(
-        fontWeight = FontWeight.Normal,
+        fontWeight = FontWeight.Bold,
         fontFamily = FontFamily(Font(R.font.ibm_plex_mono_medium_compose)),
         fontSize = 18.sp,
         lineHeight = 28.sp,

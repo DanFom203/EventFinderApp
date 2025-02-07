@@ -136,4 +136,8 @@ class Navigator : UsersAuthRouter, EventsFeatureRouter, NotesFeatureRouter, Prof
     override fun openEventsScreenFromBiometrics() {
         navController?.navigate(R.id.action_biometricsAuthFragment_to_eventsFragment)
     }
+
+    override fun openSignInScreenFromBiometrics() {
+        navController?.navigate(R.id.action_biometricsAuthFragment_to_signInFragment)
+    }
 }

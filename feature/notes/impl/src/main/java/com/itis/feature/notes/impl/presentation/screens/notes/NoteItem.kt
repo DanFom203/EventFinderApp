@@ -1,4 +1,4 @@
-package com.itis.feature.notes.impl.presentation.holder
+package com.itis.feature.notes.impl.presentation.screens.notes
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.clickable
@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.dp
 import com.itis.common.compose.DateAndTime
 import com.itis.common.compose.Description
 import com.itis.common.compose.SimpleText
-import com.itis.common.compose.Title
+import com.itis.common.compose.SubtitleBox
 import com.itis.common.utils.DateFormatter
 import com.itis.feature.notes.impl.presentation.model.NoteUiModel
 
@@ -47,12 +47,11 @@ fun NoteItem(
         elevation = CardDefaults.elevatedCardElevation(defaultElevation = 8.dp)
     ) {
         Column(
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier.padding(8.dp)
         ) {
-            Title(
+            SubtitleBox(
                 text = note.title.toString(),
-                modifier = Modifier
-                    .fillMaxWidth()
+                modifier = Modifier.padding(8.dp)
             )
             Spacer(modifier = Modifier.height(8.dp))
             Description(
