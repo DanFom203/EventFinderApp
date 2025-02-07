@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_gradient"
+    android:background="@drawable/background_gradient_light"
     android:orientation="vertical"
     android:paddingHorizontal="16dp">
 
@@ -18,7 +18,7 @@
         android:gravity="center"
         android:text="@string/favourite_events"
         android:textStyle="bold"
-        android:fontFamily="@font/ibm_plex_mono_medium"
+        android:fontFamily="@font/ibm_plex_mono_medium_compose"
         android:textAllCaps="true"
         android:textSize="24sp" />
 
@@ -57,7 +57,7 @@
         android:id="@+id/exit_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/ibm_plex_mono"
+        android:fontFamily="@font/ibm_plex_mono_compose"
         android:backgroundTint="@color/yellow"
         android:layout_marginVertical="10dp"
         android:layout_gravity="bottom"

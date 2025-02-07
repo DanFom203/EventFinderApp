@@ -5,6 +5,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:gravity="center"
     android:orientation="vertical"
+    android:background="@drawable/background_gradient_light"
     tools:context=".presentation.screens.BiometricsAuthFragment" >
+
+    <TextView
+        android:id="@+id/tv_biometrics_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Biometric Auth"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/ibm_plex_mono_medium_compose"
+        android:textColor="@color/colorTextPrimary"
+        android:background="@color/lightYellow"
+        android:layout_marginBottom="100dp" />
+
+    <ImageButton
+        android:id="@+id/btn_fingerprint"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:contentDescription="fingerprint_btn"
+        android:src="@drawable/ic_fingerprint"
+        android:background="@null" />
 
 </LinearLayout>

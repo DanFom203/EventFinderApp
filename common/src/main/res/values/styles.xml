@@ -21,7 +21,7 @@
     </style>
 
     <style name="TextAppearance.Toolbar.Title" parent="@style/TextAppearance.AppCompat.Title">
-        <item name="android:fontFamily">@font/ibm_plex_mono_medium</item>
+        <item name="android:fontFamily">@font/ibm_plex_mono_medium_compose</item>
         <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/white</item>
     </style>

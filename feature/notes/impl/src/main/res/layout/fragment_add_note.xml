@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:paddingHorizontal="16dp"
     android:paddingBottom="16dp"
-    android:background="@drawable/background_gradient">
+    android:background="@drawable/background_gradient_light">
 
     <TextView
         android:id="@+id/title_tv"
@@ -17,7 +17,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:textAllCaps="true"
-        android:fontFamily="@font/ibm_plex_mono_medium"
+        android:fontFamily="@font/ibm_plex_mono_medium_compose"
         android:background="@color/lightYellow"
         android:gravity="center"
         android:layout_marginTop="20dp"/>
@@ -86,7 +86,7 @@
                 android:id="@+id/save_note_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/ibm_plex_mono"
+                android:fontFamily="@font/ibm_plex_mono_compose"
                 android:backgroundTint="@color/yellow"
                 android:text="@string/save_note"
                 android:layout_marginTop="10dp"/>
@@ -95,7 +95,7 @@
                 android:id="@+id/exit_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/ibm_plex_mono"
+                android:fontFamily="@font/ibm_plex_mono_compose"
                 android:backgroundTint="@color/yellow"
                 android:layout_marginVertical="10dp"
                 android:text="@string/exit" />

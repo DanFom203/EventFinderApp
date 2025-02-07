@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:paddingHorizontal="16dp"
     android:paddingBottom="16dp"
-    android:background="@drawable/background_gradient"
+    android:background="@drawable/background_gradient_light"
     tools:context=".presentation.screens.profile.ProfileFragment">
 
     <TextView
@@ -18,7 +18,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:textAllCaps="true"
-        android:fontFamily="@font/ibm_plex_mono_medium"
+        android:fontFamily="@font/ibm_plex_mono_medium_compose"
         android:background="@color/lightYellow"
         android:gravity="center"
         android:layout_marginTop="20dp"/>
@@ -65,7 +65,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/username_label"
-                    android:fontFamily="@font/ibm_plex_mono_medium"
+                    android:fontFamily="@font/ibm_plex_mono_medium_compose"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -75,7 +75,7 @@
                     android:id="@+id/username_tv"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/ibm_plex_mono"
+                    android:fontFamily="@font/ibm_plex_mono_compose"
                     android:textSize="16sp"
                     app:layout_constraintStart_toEndOf="@id/username_label"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -88,7 +88,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/email_label"
-                    android:fontFamily="@font/ibm_plex_mono_medium"
+                    android:fontFamily="@font/ibm_plex_mono_medium_compose"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintTop_toBottomOf="@id/username_tv"
@@ -99,7 +99,7 @@
                     android:id="@+id/email_tv"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/ibm_plex_mono"
+                    android:fontFamily="@font/ibm_plex_mono_compose"
                     android:textSize="16sp"
                     app:layout_constraintStart_toEndOf="@id/email_label"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -113,7 +113,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/city_label"
-                    android:fontFamily="@font/ibm_plex_mono_medium"
+                    android:fontFamily="@font/ibm_plex_mono_medium_compose"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintTop_toBottomOf="@id/email_tv"
@@ -124,7 +124,7 @@
                     android:id="@+id/city_tv"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/ibm_plex_mono"
+                    android:fontFamily="@font/ibm_plex_mono_compose"
                     android:textSize="16sp"
                     app:layout_constraintStart_toEndOf="@id/city_label"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -148,7 +148,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/change_credentials"
-            android:fontFamily="@font/ibm_plex_mono"
+            android:fontFamily="@font/ibm_plex_mono_compose"
             android:backgroundTint="@color/yellow"
             android:layout_marginTop="16dp" />
 
@@ -156,7 +156,7 @@
             android:id="@+id/favourite_events_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/ibm_plex_mono"
+            android:fontFamily="@font/ibm_plex_mono_compose"
             android:backgroundTint="@color/yellow"
             android:text="@string/favourite_events"
             android:layout_marginTop="16dp" />
@@ -165,7 +165,7 @@
             android:id="@+id/logout_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/ibm_plex_mono"
+            android:fontFamily="@font/ibm_plex_mono_compose"
             android:backgroundTint="@color/red"
             android:text="@string/logout"
             android:layout_marginTop="16dp" />

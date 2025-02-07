@@ -1,22 +1,24 @@
 [versions]
 agp = "8.3.2"
+composeBomVersion = "2024.09.00"
 daggerVersion = "2.51"
 gradleVersion = "8.0.2"
 kotlin = "1.9.10"
 coreKtx = "1.13.1"
 junit = "4.13.2"
-junitVersion = "1.1.5"
-espressoCore = "3.5.1"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
 appcompat = "1.6.1"
 lifecycleExtensions = "2.2.0"
+lifecycleViewmodelCompose = "2.8.7"
 lifecycleViewModelScopeVersion = "2.4.0"
 material = "1.12.0"
-navigationUiKtx = "2.7.7"
+navigationUiKtx = "2.8.6"
 viewBindingDelegateVersion = "1.5.9"
 lifecycleRuntimeAndroid = "2.8.0"
-googleServices = "4.4.1"
+googleServices = "4.4.2"
 firebaseBom = "32.8.0"
-retrofit2 = "2.9.0"
+retrofit2 = "2.11.0"
 coroutinesAdapterVersion = "0.9.2"
 loggingVersion = "4.12.0"
 glideVersion = "4.15.1"
@@ -30,9 +32,11 @@ androidx-lifecycle-compiler = { module = "androidx.lifecycle:lifecycle-compiler"
 androidx-lifecycle-extensions = { module = "androidx.lifecycle:lifecycle-extensions", version.ref = "lifecycleExtensions" }
 androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleViewModelScopeVersion" }
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewModelScopeVersion" }
+androidx-material3 = { module = "androidx.compose.material3:material3" }
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationUiKtx" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationUiKtx" }
 build-gradle = { module = "com.android.tools.build:gradle", version.ref = "gradleVersion" }
+compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBomVersion" }
 dagger = { module = "com.google.dagger:dagger", version.ref = "daggerVersion" }
 dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "daggerVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -40,6 +44,7 @@ androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "j
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycleViewmodelCompose" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 viewbindingpropertydelegate-noreflection = { module = "com.github.kirich1409:viewbindingpropertydelegate-noreflection", version.ref = "viewBindingDelegateVersion" }
 androidx-lifecycle-runtime-android = { group = "androidx.lifecycle", name = "lifecycle-runtime-android", version.ref = "lifecycleRuntimeAndroid" }
@@ -65,4 +70,5 @@ jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "k
 jetbrainsKotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 jetbrainsKotlinKapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
+#compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 

@@ -28,17 +28,28 @@ android {
         sourceCompatibility = JavaVersion.VERSION_18
         targetCompatibility = JavaVersion.VERSION_18
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.3"
+    }
     kotlinOptions {
         jvmTarget = "18"
     }
     buildFeatures {
         viewBinding = true
+        compose = true
     }
 }
 
 dependencies {
-    api(project(":common"))
-    api(project(":feature:notes:api"))
+    implementation(project(":common"))
+    implementation(project(":feature:notes:api"))
+    //compose-bom
+    implementation(platform(libs.compose.bom))
+    androidTestImplementation(platform(libs.compose.bom))
+    //material3
+    implementation(libs.androidx.material3)
+    //integration with viewmodel
+    implementation(libs.lifecycle.viewmodel.compose)
     //dagger2
     implementation(libs.dagger)
     "kapt"(libs.dagger.compiler)

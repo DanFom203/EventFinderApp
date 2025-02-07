@@ -12,9 +12,6 @@ import dagger.Component
 
 @FeatureScope
 @Component(
-    modules = [
-        BiometricsFeatureModule::class
-    ],
     dependencies = [BiometricsFeatureDependencies::class]
 )
 interface BiometricsFeatureComponent : BiometricsFeatureApi {

@@ -34,7 +34,11 @@ class NotesAdapter(
         viewType: Int
     ): RecyclerView.ViewHolder {
         return NotesHolder(
-            viewBinding = ItemNoteBinding.inflate(LayoutInflater.from(parent.context), parent, false),
+            viewBinding = ItemNoteBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            ),
             dateFormatter = dateFormatter,
             onDeleteClicked = onDeleteClicked
         )

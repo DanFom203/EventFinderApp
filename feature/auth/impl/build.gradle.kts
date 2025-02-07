@@ -38,8 +38,8 @@ android {
 }
 
 dependencies {
-    api(project(":common"))
-    api(project(":feature:auth:api"))
+    implementation(project(":common"))
+    implementation(project(":feature:auth:api"))
     //dagger2
     implementation(libs.dagger)
     "kapt"(libs.dagger.compiler)

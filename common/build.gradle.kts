@@ -29,12 +29,25 @@ android {
         sourceCompatibility = JavaVersion.VERSION_18
         targetCompatibility = JavaVersion.VERSION_18
     }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.3"
+    }
     kotlinOptions {
         jvmTarget = "18"
     }
 }
 
 dependencies {
+    //compose-bom
+    implementation(platform(libs.compose.bom))
+    //material3
+    implementation(libs.androidx.material3)
+    // Android Studio Preview support
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    debugImplementation("androidx.compose.ui:ui-tooling")
     //dagger2
     implementation(libs.dagger)
     implementation(libs.androidx.lifecycle.runtime.android)

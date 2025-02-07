@@ -73,26 +73,26 @@ class MainActivity : BaseActivity<MainViewModel>(){
     }
 
     override suspend fun subscribe(viewModel: MainViewModel) {
-        with(viewBinding) {
-            viewModel.sharedPreferencesFlow.collect { result ->
-                when(result) {
-                    is AsyncResult.Success -> {
-                        if (result.getDataOrNull()!!) {
-                            menuBnv.show()
-                        } else {
-                            menuBnv.gone()
-                        }
-                    }
-                    is AsyncResult.Error -> {
-                        viewModel.errorHandling(result.getExceptionOrNull()!!)
-                    }
-                    else -> {
-
-                    }
-                }
-
-            }
-        }
+//        with(viewBinding) {
+//            viewModel.sharedPreferencesFlow.collect { result ->
+//                when(result) {
+//                    is AsyncResult.Success -> {
+//                        if (result.getDataOrNull()!!) {
+//                            menuBnv.show()
+//                        } else {
+//                            menuBnv.gone()
+//                        }
+//                    }
+//                    is AsyncResult.Error -> {
+//                        viewModel.errorHandling(result.getExceptionOrNull()!!)
+//                    }
+//                    else -> {
+//
+//                    }
+//                }
+//
+//            }
+//        }
     }
 
     override fun onDestroy() {
