@@ -46,7 +46,6 @@ class BiometricsAuthFragment: BaseFragment<BiometricsAuthViewModel>(R.layout.fra
     override fun initViews() {
         executor = ContextCompat.getMainExecutor(requireContext())
         exceptionHandler = BiometricExceptionHandler(requireContext())
-        // Проверка доступности биометрии и PIN/пароля
         biometricManager = BiometricManager.from(requireContext())
         keyguardManager = requireContext().getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
 
