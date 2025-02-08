@@ -1,4 +1,4 @@
-package com.itis.feature.auth.impl.utils
+package com.itis.feature.auth.api.utils
 
 interface UsersAuthRouter {
     fun openSignUpFromSignIn()

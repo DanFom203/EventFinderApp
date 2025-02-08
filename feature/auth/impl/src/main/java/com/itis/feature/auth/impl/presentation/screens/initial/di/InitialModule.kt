@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.itis.common.di.viewmodel.ViewModelKey
 import com.itis.common.di.viewmodel.ViewModelModule
 import com.itis.feature.auth.impl.presentation.screens.initial.InitialViewModel
-import com.itis.feature.auth.impl.utils.UsersAuthRouter
+import com.itis.feature.auth.api.utils.UsersAuthRouter
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap

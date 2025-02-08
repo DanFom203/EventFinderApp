@@ -1,19 +1,20 @@
 package com.itis.eventfinderapp.navigation
 
 import android.content.Intent
+import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
-import com.example.feature.profile.impl.utils.ProfileFeatureRouter
+import com.example.feature.profile.api.utils.ProfileFeatureRouter
 import com.itis.eventfinderapp.R
 import com.itis.eventfinderapp.di.main.MainActivity
-import com.itis.feature.auth.impl.utils.UsersAuthRouter
-import com.itis.feature.biometrics.impl.utils.BiometricsAuthRouter
-import com.itis.feature.events.impl.presentation.model.EventUiModel
-import com.itis.feature.events.impl.presentation.screens.event_info.EventInfoFragment
-import com.itis.feature.events.impl.utils.EventsFeatureRouter
-import com.itis.feature.notes.impl.utils.NotesFeatureRouter
+import com.itis.feature.auth.api.utils.UsersAuthRouter
+import com.itis.feature.biometrics.api.utils.BiometricsAuthRouter
+import com.itis.feature.events.api.presentation.model.EventUiModel
+import com.itis.feature.events.api.utils.EventsFeatureRouter
+import com.itis.feature.notes.api.utils.NotesFeatureRouter
 
-class Navigator : UsersAuthRouter, EventsFeatureRouter, NotesFeatureRouter, ProfileFeatureRouter, BiometricsAuthRouter {
+class Navigator : UsersAuthRouter, EventsFeatureRouter, NotesFeatureRouter, ProfileFeatureRouter,
+    BiometricsAuthRouter {
 
     private var navController: NavController? = null
 
@@ -83,18 +84,14 @@ class Navigator : UsersAuthRouter, EventsFeatureRouter, NotesFeatureRouter, Prof
     override fun openEventInfoScreenFromEventsScreen(eventUiModel: EventUiModel) {
         navController?.navigate(
             R.id.action_eventsFragment_to_eventInfoFragment,
-            EventInfoFragment.createBundle(
-                eventId = eventUiModel.id
-            )
+            bundleOf(Pair("event_id", eventUiModel.id))
         )
     }
 
     override fun openEventInfoScreenFromFavouriteEventsScreen(eventUiModel: EventUiModel) {
         navController?.navigate(
             R.id.action_favouriteEventsFragment_to_eventInfoFragment,
-            EventInfoFragment.createBundle(
-                eventId = eventUiModel.id
-            )
+            bundleOf(Pair("event_id", eventUiModel.id))
         )
     }
 

@@ -1,10 +1,8 @@
 package com.itis.feature.events.impl.presentation.screens.event_info
 
-import android.os.Bundle
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
-import androidx.core.os.bundleOf
 import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.bumptech.glide.Glide
@@ -16,10 +14,10 @@ import com.itis.common.utils.DateFormatter
 import com.itis.common.utils.gone
 import com.itis.common.utils.show
 import com.itis.feature.events.api.di.EventsFeatureApi
+import com.itis.feature.events.api.presentation.model.EventInfoUiModel
 import com.itis.feature.events.impl.R
 import com.itis.feature.events.impl.databinding.FragmentEventInfoBinding
 import com.itis.feature.events.impl.di.EventsFeatureComponent
-import com.itis.feature.events.impl.presentation.model.EventInfoUiModel
 import com.itis.feature.events.impl.utils.DescriptionFormatter
 import com.itis.feature.events.impl.utils.Keys
 import kotlinx.coroutines.channels.consumeEach
@@ -39,8 +37,10 @@ class EventInfoFragment: BaseFragment<EventInfoViewModel>(R.layout.fragment_even
     private val descriptionFormatter = DescriptionFormatter()
 
     override fun initViews() {
-        viewModel.initialize(arguments?.getInt(Keys.EVENT_ID_KEY)
-            ?: Constants.EMPTY_INT_DATA)
+        viewModel.initialize(
+            arguments?.getInt(Keys.EVENT_ID_KEY)
+            ?: Constants.EMPTY_INT_DATA
+        )
         viewBinding.loadingProgressBar.show()
     }
 
@@ -190,15 +190,4 @@ class EventInfoFragment: BaseFragment<EventInfoViewModel>(R.layout.fragment_even
             }
         }
     }
-
-    companion object {
-        fun createBundle(
-            eventId: Int,
-        ): Bundle {
-            return bundleOf(
-                Keys.EVENT_ID_KEY to eventId,
-            )
-        }
-    }
-
 }

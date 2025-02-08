@@ -4,7 +4,7 @@ import com.itis.feature.events.api.domain.repository.EventsRepository
 import com.itis.feature.events.api.domain.response.EventsListResponse
 import com.itis.feature.events.impl.data.mapper.EventsListDomainModelMapper
 import com.itis.feature.events.impl.domain.mapper.EventsListUiModelMapper
-import com.itis.feature.events.impl.presentation.model.EventsListUiModel
+import com.itis.feature.events.api.presentation.model.EventsListUiModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

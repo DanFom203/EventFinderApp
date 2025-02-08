@@ -38,8 +38,8 @@ android {
 }
 
 dependencies {
-    api(project(":common"))
-    api(project(":feature:profile:api"))
+    implementation(project(":common"))
+    implementation(project(":feature:profile:api"))
     //dagger2
     implementation(libs.dagger)
     "kapt"(libs.dagger.compiler)
@@ -57,13 +57,16 @@ dependencies {
     //circle-image-view
     implementation(libs.circle.image.view)
     //image-picker
-    implementation("com.github.dhaval2404:imagepicker:2.1")
+    implementation(libs.imagepicker)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
 
     testImplementation(libs.junit)
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlin.test.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }

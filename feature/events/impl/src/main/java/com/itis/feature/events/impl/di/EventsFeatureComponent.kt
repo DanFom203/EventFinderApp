@@ -8,7 +8,7 @@ import com.itis.feature.events.api.di.EventsFeatureApi
 import com.itis.feature.events.impl.presentation.screens.event_info.di.EventInfoComponent
 import com.itis.feature.events.impl.presentation.screens.events.di.EventsComponent
 import com.itis.feature.events.impl.presentation.screens.favourite_events.di.FavouriteEventsComponent
-import com.itis.feature.events.impl.utils.EventsFeatureRouter
+import com.itis.feature.events.api.utils.EventsFeatureRouter
 import com.itis.feature.kudago.api.remote.KudagoApi
 import dagger.BindsInstance
 import dagger.Component

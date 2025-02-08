@@ -7,7 +7,7 @@ import com.example.feature.profile.impl.domain.usecase.GetUserProfileInfoUseCase
 import com.example.feature.profile.impl.domain.usecase.LogoutUserUseCase
 import com.example.feature.profile.impl.domain.usecase.UpdateUserProfilePictureUseCase
 import com.example.feature.profile.impl.presentation.screens.profile.ProfileViewModel
-import com.example.feature.profile.impl.utils.ProfileFeatureRouter
+import com.example.feature.profile.api.utils.ProfileFeatureRouter
 import com.itis.common.di.viewmodel.ViewModelKey
 import com.itis.common.di.viewmodel.ViewModelModule
 import com.itis.common.utils.ExceptionHandlerDelegate

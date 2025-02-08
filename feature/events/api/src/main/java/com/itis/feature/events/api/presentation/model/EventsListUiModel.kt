@@ -1,4 +1,4 @@
-package com.itis.feature.events.impl.presentation.model
+package com.itis.feature.events.api.presentation.model
 
 data class EventsListUiModel(
     val count: Int,

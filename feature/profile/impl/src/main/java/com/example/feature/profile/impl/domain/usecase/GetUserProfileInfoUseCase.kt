@@ -3,7 +3,7 @@ package com.example.feature.profile.impl.domain.usecase
 import com.example.feature.profile.api.domain.repository.ProfileRepository
 import com.example.feature.profile.impl.data.mapper.UserProfileDomainModelMapper
 import com.example.feature.profile.impl.domain.mapper.UserProfileUiModelMapper
-import com.example.feature.profile.impl.presentation.model.ProfileUserUiModel
+import com.example.feature.profile.api.presentation.model.ProfileUserUiModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

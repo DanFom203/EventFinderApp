@@ -6,10 +6,10 @@ import com.itis.common.data.storage.PreferencesImpl
 import com.itis.common.utils.ExceptionHandlerDelegate
 import com.itis.common.utils.runCatching
 import com.itis.feature.auth.impl.domain.usecases.SignInUseCase
-import com.itis.feature.auth.impl.presentation.model.SignInForm
-import com.itis.feature.auth.impl.presentation.model.UserUiModel
+import com.itis.feature.auth.api.presentation.model.SignInForm
+import com.itis.feature.auth.api.presentation.model.UserUiModel
 import com.itis.common.utils.CredentialsValidator
-import com.itis.feature.auth.impl.utils.UsersAuthRouter
+import com.itis.feature.auth.api.utils.UsersAuthRouter
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

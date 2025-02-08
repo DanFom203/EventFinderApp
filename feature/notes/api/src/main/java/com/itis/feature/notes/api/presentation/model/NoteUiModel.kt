@@ -1,4 +1,4 @@
-package com.itis.feature.notes.impl.presentation.model
+package com.itis.feature.notes.api.presentation.model
 
 data class NoteUiModel (
     val creationTime: Long,

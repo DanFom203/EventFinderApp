@@ -6,7 +6,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.itis.common.di.FeatureApiHolder
 import com.itis.common.di.FeatureContainer
 import com.itis.common.di.scope.ApplicationScope
-import com.itis.feature.auth.impl.utils.UsersAuthRouter
+import com.itis.feature.auth.api.utils.UsersAuthRouter
 import javax.inject.Inject
 
 @ApplicationScope

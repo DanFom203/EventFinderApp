@@ -7,7 +7,7 @@ import com.itis.common.core.resources.ResourceManager
 import com.itis.common.utils.DateFormatter
 import com.itis.feature.events.impl.R
 import com.itis.feature.events.impl.databinding.ItemEventBinding
-import com.itis.feature.events.impl.presentation.model.EventUiModel
+import com.itis.feature.events.api.presentation.model.EventUiModel
 import com.itis.feature.events.impl.utils.DescriptionFormatter
 
 class EventsHolder (

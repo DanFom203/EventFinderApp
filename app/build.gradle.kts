@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.jetbrainsKotlinKapt)
     id("com.google.gms.google-services")
+    alias(libs.plugins.googleFirebaseCrashlytics)
 }
 
 android {
@@ -41,21 +42,20 @@ android {
 }
 
 dependencies {
-    api(project(":common"))
-    api(project(":feature:auth:api"))
-    api(project(":feature:auth:impl"))
-    api(project(":feature:biometrics:api"))
-    api(project(":feature:biometrics:impl"))
-    api(project(":feature:events:api"))
-    api(project(":feature:events:impl"))
-    api(project(":feature:kudago:api"))
-    api(project(":feature:notes:api"))
-    api(project(":feature:notes:impl"))
-    api(project(":feature:profile:api"))
-    api(project(":feature:profile:impl"))
+    implementation(project(":common"))
+    implementation(project(":feature:auth:api"))
+    implementation(project(":feature:auth:impl"))
+    implementation(project(":feature:biometrics:api"))
+    implementation(project(":feature:biometrics:impl"))
+    implementation(project(":feature:events:api"))
+    implementation(project(":feature:events:impl"))
+    implementation(project(":feature:kudago:api"))
+    implementation(project(":feature:notes:api"))
+    implementation(project(":feature:notes:impl"))
+    implementation(project(":feature:profile:api"))
+    implementation(project(":feature:profile:impl"))
     //dagger2
     implementation(libs.dagger)
-    implementation(libs.firebase.auth)
     "kapt"(libs.dagger.compiler)
     //navigation
     implementation(libs.androidx.navigation.fragment.ktx)
@@ -68,6 +68,12 @@ dependencies {
     //firebase-auth
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
+    //firebase-crashlytics
+    implementation(libs.firebase.crashlytics)
+    //firebase-analytics
+    implementation(libs.firebase.analytics)
+    //firebase-performance
+    implementation(libs.firebase.perf)
     //firebase-firestore-database
     implementation(libs.firebase.firestore)
     //firebase-storage

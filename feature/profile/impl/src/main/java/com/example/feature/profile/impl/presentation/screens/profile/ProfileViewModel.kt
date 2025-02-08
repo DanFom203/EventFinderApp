@@ -5,8 +5,8 @@ import androidx.lifecycle.viewModelScope
 import com.example.feature.profile.impl.domain.usecase.GetUserProfileInfoUseCase
 import com.example.feature.profile.impl.domain.usecase.LogoutUserUseCase
 import com.example.feature.profile.impl.domain.usecase.UpdateUserProfilePictureUseCase
-import com.example.feature.profile.impl.presentation.model.ProfileUserUiModel
-import com.example.feature.profile.impl.utils.ProfileFeatureRouter
+import com.example.feature.profile.api.presentation.model.ProfileUserUiModel
+import com.example.feature.profile.api.utils.ProfileFeatureRouter
 import com.itis.common.base.BaseViewModel
 import com.itis.common.utils.ExceptionHandlerDelegate
 import com.itis.common.utils.runCatching

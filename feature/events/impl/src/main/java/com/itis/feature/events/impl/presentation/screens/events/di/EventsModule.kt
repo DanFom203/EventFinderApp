@@ -9,7 +9,7 @@ import com.itis.common.utils.ExceptionHandlerDelegate
 import com.itis.feature.events.impl.domain.usecase.GetCurrentEventsUseCase
 import com.itis.feature.events.impl.domain.usecase.GetCurrentLocationUseCase
 import com.itis.feature.events.impl.presentation.screens.events.EventsViewModel
-import com.itis.feature.events.impl.utils.EventsFeatureRouter
+import com.itis.feature.events.api.utils.EventsFeatureRouter
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap

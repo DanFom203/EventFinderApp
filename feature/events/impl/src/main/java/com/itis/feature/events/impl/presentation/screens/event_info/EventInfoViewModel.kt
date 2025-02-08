@@ -8,8 +8,8 @@ import com.itis.feature.events.impl.domain.usecase.DeleteFromFavouritesUseCase
 import com.itis.feature.events.impl.domain.usecase.ExistsInFavouritesUseCase
 import com.itis.feature.events.impl.domain.usecase.GetEventInfoUseCase
 import com.itis.feature.events.impl.domain.usecase.SaveToFavouritesUseCase
-import com.itis.feature.events.impl.presentation.model.EventInfoUiModel
-import com.itis.feature.events.impl.utils.EventsFeatureRouter
+import com.itis.feature.events.api.presentation.model.EventInfoUiModel
+import com.itis.feature.events.api.utils.EventsFeatureRouter
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

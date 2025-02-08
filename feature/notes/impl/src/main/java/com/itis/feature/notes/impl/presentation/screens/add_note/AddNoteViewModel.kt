@@ -6,8 +6,8 @@ import com.itis.common.data.storage.PreferencesImpl
 import com.itis.common.utils.ExceptionHandlerDelegate
 import com.itis.common.utils.runCatching
 import com.itis.feature.notes.impl.domain.usecase.SaveUsersNoteUseCase
-import com.itis.feature.notes.impl.presentation.model.NoteUiModel
-import com.itis.feature.notes.impl.utils.NotesFeatureRouter
+import com.itis.feature.notes.api.presentation.model.NoteUiModel
+import com.itis.feature.notes.api.utils.NotesFeatureRouter
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.launch
 

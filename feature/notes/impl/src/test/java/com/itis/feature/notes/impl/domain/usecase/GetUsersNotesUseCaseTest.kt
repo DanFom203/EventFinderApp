@@ -5,7 +5,7 @@ import com.itis.feature.notes.api.domain.repository.NotesRepository
 import com.itis.feature.notes.impl.data.mapper.NoteEntityDomainModelMapper
 import com.itis.feature.notes.impl.domain.mapper.NoteUiModelMapper
 import com.itis.feature.notes.impl.domain.model.NoteDomainModel
-import com.itis.feature.notes.impl.presentation.model.NoteUiModel
+import com.itis.feature.notes.api.presentation.model.NoteUiModel
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK

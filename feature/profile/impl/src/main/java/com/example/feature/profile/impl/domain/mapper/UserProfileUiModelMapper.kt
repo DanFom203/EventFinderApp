@@ -1,7 +1,7 @@
 package com.example.feature.profile.impl.domain.mapper
 
 import com.example.feature.profile.impl.domain.model.ProfileUserDomainModel
-import com.example.feature.profile.impl.presentation.model.ProfileUserUiModel
+import com.example.feature.profile.api.presentation.model.ProfileUserUiModel
 import javax.inject.Inject
 
 class UserProfileUiModelMapper @Inject constructor() {

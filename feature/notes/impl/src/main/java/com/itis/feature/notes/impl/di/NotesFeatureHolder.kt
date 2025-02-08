@@ -5,7 +5,7 @@ import com.itis.common.data.local.db.dao.NoteDao
 import com.itis.common.di.FeatureApiHolder
 import com.itis.common.di.FeatureContainer
 import com.itis.common.di.scope.ApplicationScope
-import com.itis.feature.notes.impl.utils.NotesFeatureRouter
+import com.itis.feature.notes.api.utils.NotesFeatureRouter
 import javax.inject.Inject
 
 @ApplicationScope

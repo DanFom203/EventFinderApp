@@ -13,7 +13,7 @@ import com.example.feature.profile.api.di.ProfileFeatureApi
 import com.example.feature.profile.impl.R
 import com.example.feature.profile.impl.databinding.FragmentUserProfileBinding
 import com.example.feature.profile.impl.di.ProfileFeatureComponent
-import com.example.feature.profile.impl.presentation.model.ProfileUserUiModel
+import com.example.feature.profile.api.presentation.model.ProfileUserUiModel
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.itis.common.base.BaseFragment
 import com.itis.common.di.FeatureUtils

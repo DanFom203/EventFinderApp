@@ -5,14 +5,15 @@ import com.itis.common.base.BaseViewModel
 import com.itis.common.data.storage.PreferencesImpl
 import com.itis.common.utils.ExceptionHandlerDelegate
 import com.itis.common.utils.runCatching
+import com.itis.feature.notes.api.utils.NotesFeatureRouter
 import com.itis.feature.notes.impl.domain.usecase.DeleteUsersNoteUseCase
 import com.itis.feature.notes.impl.domain.usecase.GetUsersNotesUseCase
-import com.itis.feature.notes.impl.presentation.model.NoteUiModel
 import com.itis.feature.notes.impl.presentation.screens.notes.intent.NotesIntent
 import com.itis.feature.notes.impl.presentation.screens.notes.state.NotesState
-import com.itis.feature.notes.impl.utils.NotesFeatureRouter
 import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
 class NotesViewModel(

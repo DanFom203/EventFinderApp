@@ -1,6 +1,6 @@
 package com.itis.feature.notes.impl.presentation.screens.notes.state
 
-import com.itis.feature.notes.impl.presentation.model.NoteUiModel
+import com.itis.feature.notes.api.presentation.model.NoteUiModel
 
 sealed class NotesState {
     object Loading : NotesState()

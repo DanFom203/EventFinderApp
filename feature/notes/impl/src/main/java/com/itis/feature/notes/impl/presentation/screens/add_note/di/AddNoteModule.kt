@@ -9,7 +9,7 @@ import com.itis.common.di.viewmodel.ViewModelModule
 import com.itis.common.utils.ExceptionHandlerDelegate
 import com.itis.feature.notes.impl.domain.usecase.SaveUsersNoteUseCase
 import com.itis.feature.notes.impl.presentation.screens.add_note.AddNoteViewModel
-import com.itis.feature.notes.impl.utils.NotesFeatureRouter
+import com.itis.feature.notes.api.utils.NotesFeatureRouter
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap

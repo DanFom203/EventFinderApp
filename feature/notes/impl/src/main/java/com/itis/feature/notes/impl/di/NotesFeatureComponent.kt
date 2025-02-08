@@ -7,7 +7,7 @@ import com.itis.common.di.scope.FeatureScope
 import com.itis.feature.notes.api.di.NotesFeatureApi
 import com.itis.feature.notes.impl.presentation.screens.add_note.di.AddNoteComponent
 import com.itis.feature.notes.impl.presentation.screens.notes.di.NotesComponent
-import com.itis.feature.notes.impl.utils.NotesFeatureRouter
+import com.itis.feature.notes.api.utils.NotesFeatureRouter
 import dagger.BindsInstance
 import dagger.Component
 

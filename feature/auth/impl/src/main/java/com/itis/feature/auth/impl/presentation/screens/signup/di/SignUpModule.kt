@@ -10,7 +10,7 @@ import com.itis.common.utils.CredentialsValidator
 import com.itis.common.utils.ExceptionHandlerDelegate
 import com.itis.feature.auth.impl.domain.usecases.SignUpUseCase
 import com.itis.feature.auth.impl.presentation.screens.signup.SignUpViewModel
-import com.itis.feature.auth.impl.utils.UsersAuthRouter
+import com.itis.feature.auth.api.utils.UsersAuthRouter
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap

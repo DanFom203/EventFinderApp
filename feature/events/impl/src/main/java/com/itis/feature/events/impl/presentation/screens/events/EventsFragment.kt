@@ -17,7 +17,7 @@ import com.itis.feature.events.impl.R
 import com.itis.feature.events.impl.databinding.FragmentEventsBinding
 import com.itis.feature.events.impl.di.EventsFeatureComponent
 import com.itis.feature.events.impl.presentation.adapter.EventsAdapter
-import com.itis.feature.events.impl.presentation.model.EventUiModel
+import com.itis.feature.events.api.presentation.model.EventUiModel
 import kotlinx.coroutines.channels.consumeEach
 import kotlinx.coroutines.launch
 import javax.inject.Inject

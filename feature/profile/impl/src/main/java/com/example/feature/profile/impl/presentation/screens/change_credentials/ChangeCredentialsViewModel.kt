@@ -2,7 +2,7 @@ package com.example.feature.profile.impl.presentation.screens.change_credentials
 
 import androidx.lifecycle.viewModelScope
 import com.example.feature.profile.impl.domain.usecase.UpdateUserProfileInfoUseCase
-import com.example.feature.profile.impl.utils.ProfileFeatureRouter
+import com.example.feature.profile.api.utils.ProfileFeatureRouter
 import com.itis.common.base.BaseViewModel
 import com.itis.common.utils.CityFormatter
 import com.itis.common.utils.CredentialsValidator

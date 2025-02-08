@@ -2,14 +2,9 @@ package com.itis.feature.events.impl.domain.usecase
 
 import com.itis.feature.events.api.domain.repository.EventsRepository
 import com.itis.feature.events.api.domain.response.EventInfoResponse
-import com.itis.feature.events.api.domain.response.EventsListResponse
+import com.itis.feature.events.api.presentation.model.EventInfoUiModel
 import com.itis.feature.events.impl.data.mapper.EventInfoDomainModelMapper
-import com.itis.feature.events.impl.data.mapper.EventsListDomainModelMapper
 import com.itis.feature.events.impl.domain.mapper.EventInfoUiModelMapper
-import com.itis.feature.events.impl.domain.mapper.EventsListUiModelMapper
-import com.itis.feature.events.impl.presentation.model.EventInfoUiModel
-import com.itis.feature.events.impl.presentation.model.EventUiModel
-import com.itis.feature.events.impl.presentation.model.EventsListUiModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

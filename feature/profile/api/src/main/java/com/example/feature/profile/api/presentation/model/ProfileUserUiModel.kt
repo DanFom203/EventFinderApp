@@ -1,4 +1,4 @@
-package com.example.feature.profile.impl.presentation.model
+package com.example.feature.profile.api.presentation.model
 
 data class ProfileUserUiModel(
     val userId: String,

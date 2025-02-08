@@ -2,7 +2,7 @@ package com.itis.feature.notes.impl.domain.usecase
 
 import com.itis.feature.notes.api.domain.repository.NotesRepository
 import com.itis.feature.notes.impl.presentation.mapper.NoteDataModelMapper
-import com.itis.feature.notes.impl.presentation.model.NoteUiModel
+import com.itis.feature.notes.api.presentation.model.NoteUiModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

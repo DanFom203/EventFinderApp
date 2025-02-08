@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
@@ -64,13 +63,11 @@
         android:id="@+id/eventInfoFragment"
         android:name="com.itis.feature.events.impl.presentation.screens.event_info.EventInfoFragment"
         tools:layout="@layout/fragment_event_info" >
-
     </fragment>
     <fragment
         android:id="@+id/notesFragment"
         android:name="com.itis.feature.notes.impl.presentation.screens.notes.NotesFragment"
-        android:label="NotesFragment"
-        tools:layout="@layout/fragment_notes">
+        android:label="NotesFragment" >
         <action
             android:id="@+id/action_notesFragment_to_addNoteFragment"
             app:destination="@id/addNoteFragment" />
@@ -78,8 +75,7 @@
     <fragment
         android:id="@+id/addNoteFragment"
         android:name="com.itis.feature.notes.impl.presentation.screens.add_note.AddNoteFragment"
-        android:label="AddNoteFragment"
-        tools:layout="@layout/fragment_add_note" />
+        android:label="AddNoteFragment" />
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.feature.profile.impl.presentation.screens.profile.ProfileFragment"

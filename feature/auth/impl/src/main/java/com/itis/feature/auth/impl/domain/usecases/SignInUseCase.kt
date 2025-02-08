@@ -2,8 +2,8 @@ package com.itis.feature.auth.impl.domain.usecases
 
 import com.itis.feature.auth.api.domain.repository.UserRepository
 import com.itis.feature.auth.impl.domain.mapper.UserUiModelMapper
-import com.itis.feature.auth.impl.presentation.model.SignInForm
-import com.itis.feature.auth.impl.presentation.model.UserUiModel
+import com.itis.feature.auth.api.presentation.model.SignInForm
+import com.itis.feature.auth.api.presentation.model.UserUiModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

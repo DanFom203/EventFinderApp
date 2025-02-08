@@ -1,4 +1,4 @@
-package com.itis.feature.notes.impl.utils
+package com.itis.feature.notes.api.utils
 
 interface NotesFeatureRouter {
     fun openAddNoteScreenFromNotesScreen()

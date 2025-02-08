@@ -2,9 +2,8 @@ package com.itis.feature.notes.impl.domain.usecase
 
 import com.itis.common.data.local.db.entity.NoteEntity
 import com.itis.feature.notes.api.domain.repository.NotesRepository
-import com.itis.feature.notes.impl.domain.mapper.NoteUiModelMapper
+import com.itis.feature.notes.api.presentation.model.NoteUiModel
 import com.itis.feature.notes.impl.presentation.mapper.NoteDataModelMapper
-import com.itis.feature.notes.impl.presentation.model.NoteUiModel
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.coVerify
@@ -12,8 +11,6 @@ import io.mockk.impl.annotations.MockK
 import io.mockk.mockk
 import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.runTest
-import org.junit.Assert.*
-
 import org.junit.Before
 import kotlin.test.Test
 

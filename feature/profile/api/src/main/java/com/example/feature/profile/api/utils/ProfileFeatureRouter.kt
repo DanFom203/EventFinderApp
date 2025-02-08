@@ -1,4 +1,4 @@
-package com.example.feature.profile.impl.utils
+package com.example.feature.profile.api.utils
 
 interface ProfileFeatureRouter {
     fun openChangeCredentialsScreenFromProfileScreen()

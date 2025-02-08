@@ -1,7 +1,7 @@
 package com.itis.feature.events.impl.domain.mapper
 
 import com.itis.feature.events.impl.domain.model.EventInfoDomainModel
-import com.itis.feature.events.impl.presentation.model.EventInfoUiModel
+import com.itis.feature.events.api.presentation.model.EventInfoUiModel
 import javax.inject.Inject
 
 class EventInfoUiModelMapper @Inject constructor() {

@@ -1,4 +1,4 @@
-package com.itis.feature.biometrics.impl.utils
+package com.itis.feature.biometrics.api.utils
 
 interface BiometricsAuthRouter {
     fun openEventsScreenFromBiometrics()

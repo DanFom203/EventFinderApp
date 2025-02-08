@@ -4,7 +4,7 @@ import android.content.Context
 import com.itis.common.di.FeatureApiHolder
 import com.itis.common.di.FeatureContainer
 import com.itis.common.di.scope.ApplicationScope
-import com.itis.feature.biometrics.impl.utils.BiometricsAuthRouter
+import com.itis.feature.biometrics.api.utils.BiometricsAuthRouter
 import javax.inject.Inject
 
 @ApplicationScope

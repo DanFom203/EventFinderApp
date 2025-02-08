@@ -1,7 +1,7 @@
 package com.example.feature.profile.impl.di
 
 import android.content.Context
-import com.example.feature.profile.impl.utils.ProfileFeatureRouter
+import com.example.feature.profile.api.utils.ProfileFeatureRouter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage

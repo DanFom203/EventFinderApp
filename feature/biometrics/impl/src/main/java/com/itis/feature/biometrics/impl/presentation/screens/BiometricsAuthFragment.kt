@@ -52,7 +52,6 @@ class BiometricsAuthFragment: BaseFragment<BiometricsAuthViewModel>(R.layout.fra
         viewBinding.btnFingerprint.setOnClickListener {
             biometricAuth()
         }
-
     }
 
     override suspend fun subscribe(viewModel: BiometricsAuthViewModel) {

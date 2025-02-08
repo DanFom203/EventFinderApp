@@ -5,9 +5,9 @@ import com.itis.common.base.BaseViewModel
 import com.itis.common.utils.ExceptionHandlerDelegate
 import com.itis.common.utils.runCatching
 import com.itis.feature.events.impl.domain.usecase.GetUsersFavouriteEventsUseCase
-import com.itis.feature.events.impl.presentation.model.EventUiModel
-import com.itis.feature.events.impl.presentation.model.EventsListUiModel
-import com.itis.feature.events.impl.utils.EventsFeatureRouter
+import com.itis.feature.events.api.presentation.model.EventUiModel
+import com.itis.feature.events.api.presentation.model.EventsListUiModel
+import com.itis.feature.events.api.utils.EventsFeatureRouter
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

@@ -10,7 +10,7 @@ import com.itis.feature.auth.api.di.AuthFeatureApi
 import com.itis.feature.auth.impl.presentation.screens.initial.di.InitialComponent
 import com.itis.feature.auth.impl.presentation.screens.signin.di.SignInComponent
 import com.itis.feature.auth.impl.presentation.screens.splash.di.SplashComponent
-import com.itis.feature.auth.impl.utils.UsersAuthRouter
+import com.itis.feature.auth.api.utils.UsersAuthRouter
 import dagger.BindsInstance
 import dagger.Component
 

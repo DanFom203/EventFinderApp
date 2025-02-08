@@ -27,7 +27,7 @@ import com.itis.common.compose.Description
 import com.itis.common.compose.SimpleText
 import com.itis.common.compose.SubtitleBox
 import com.itis.common.utils.DateFormatter
-import com.itis.feature.notes.impl.presentation.model.NoteUiModel
+import com.itis.feature.notes.api.presentation.model.NoteUiModel
 
 @Composable
 fun NoteItem(

@@ -7,7 +7,7 @@ import com.itis.common.data.storage.PreferencesImpl
 import com.itis.common.di.viewmodel.ViewModelKey
 import com.itis.common.di.viewmodel.ViewModelModule
 import com.itis.feature.biometrics.impl.presentation.screens.BiometricsAuthViewModel
-import com.itis.feature.biometrics.impl.utils.BiometricsAuthRouter
+import com.itis.feature.biometrics.api.utils.BiometricsAuthRouter
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap

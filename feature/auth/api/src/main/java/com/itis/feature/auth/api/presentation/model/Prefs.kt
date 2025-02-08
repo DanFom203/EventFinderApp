@@ -1,4 +1,4 @@
-package com.itis.feature.auth.impl.presentation.model
+package com.itis.feature.auth.api.presentation.model
 
 data class Prefs (
     val authStatus: Boolean,

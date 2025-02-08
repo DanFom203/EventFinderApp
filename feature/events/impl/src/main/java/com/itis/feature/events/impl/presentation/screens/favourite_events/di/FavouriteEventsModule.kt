@@ -8,7 +8,7 @@ import com.itis.common.di.viewmodel.ViewModelKey
 import com.itis.common.di.viewmodel.ViewModelModule
 import com.itis.common.utils.ExceptionHandlerDelegate
 import com.itis.feature.events.impl.domain.usecase.GetUsersFavouriteEventsUseCase
-import com.itis.feature.events.impl.utils.EventsFeatureRouter
+import com.itis.feature.events.api.utils.EventsFeatureRouter
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap

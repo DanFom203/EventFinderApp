@@ -6,6 +6,9 @@ import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.Firebase
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.analytics
 import com.itis.common.base.BaseActivity
 import com.itis.eventfinderapp.R
 import com.itis.eventfinderapp.di.deps.findComponentDependencies
@@ -15,9 +18,10 @@ import javax.inject.Inject
 
 class MainActivity : BaseActivity<MainViewModel>(){
 
+    private lateinit var analytics: FirebaseAnalytics
+
     @Inject lateinit var navigator: Navigator
 
-//    private val viewBinding: ActivityMainBinding by viewBinding(ActivityMainBinding::bind)
     private var controller: NavController? = null
 
     override fun inject() {
@@ -30,6 +34,9 @@ class MainActivity : BaseActivity<MainViewModel>(){
     }
 
     override fun initViews() {
+        // Obtain the FirebaseAnalytics instance.
+        analytics = Firebase.analytics
+
         controller =
             (supportFragmentManager.findFragmentById(R.id.main_activity_container) as NavHostFragment)
                 .navController
@@ -67,28 +74,7 @@ class MainActivity : BaseActivity<MainViewModel>(){
 
     }
 
-    override suspend fun subscribe(viewModel: MainViewModel) {
-//        with(viewBinding) {
-//            viewModel.sharedPreferencesFlow.collect { result ->
-//                when(result) {
-//                    is AsyncResult.Success -> {
-//                        if (result.getDataOrNull()!!) {
-//                            menuBnv.show()
-//                        } else {
-//                            menuBnv.gone()
-//                        }
-//                    }
-//                    is AsyncResult.Error -> {
-//                        viewModel.errorHandling(result.getExceptionOrNull()!!)
-//                    }
-//                    else -> {
-//
-//                    }
-//                }
-//
-//            }
-//        }
-    }
+    override suspend fun subscribe(viewModel: MainViewModel) { }
 
     override fun onDestroy() {
         super.onDestroy()

@@ -1,14 +1,14 @@
 package com.itis.eventfinderapp.di.app
 
-import com.example.feature.profile.impl.utils.ProfileFeatureRouter
-import com.itis.common.di.scope.ApplicationScope
-import com.itis.eventfinderapp.navigation.Navigator
-import com.itis.feature.auth.impl.utils.UsersAuthRouter
-import com.itis.feature.biometrics.impl.utils.BiometricsAuthRouter
-import com.itis.feature.events.impl.utils.EventsFeatureRouter
-import com.itis.feature.notes.impl.utils.NotesFeatureRouter
+import com.example.feature.profile.api.utils.ProfileFeatureRouter
 import dagger.Module
 import dagger.Provides
+import com.itis.common.di.scope.ApplicationScope
+import com.itis.eventfinderapp.navigation.Navigator
+import com.itis.feature.auth.api.utils.UsersAuthRouter
+import com.itis.feature.biometrics.api.utils.BiometricsAuthRouter
+import com.itis.feature.events.api.utils.EventsFeatureRouter
+import com.itis.feature.notes.api.utils.NotesFeatureRouter
 
 @Module
 class NavigationModule {

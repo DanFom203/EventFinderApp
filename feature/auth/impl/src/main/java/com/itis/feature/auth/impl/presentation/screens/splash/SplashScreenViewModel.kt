@@ -3,8 +3,8 @@ package com.itis.feature.auth.impl.presentation.screens.splash
 import androidx.lifecycle.viewModelScope
 import com.itis.common.base.BaseViewModel
 import com.itis.common.data.storage.PreferencesImpl
-import com.itis.feature.auth.impl.presentation.model.Prefs
-import com.itis.feature.auth.impl.utils.UsersAuthRouter
+import com.itis.feature.auth.api.presentation.model.Prefs
+import com.itis.feature.auth.api.utils.UsersAuthRouter
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.feature.profile.impl.domain.usecase.UpdateUserProfileInfoUseCase
 import com.example.feature.profile.impl.presentation.screens.change_credentials.ChangeCredentialsViewModel
-import com.example.feature.profile.impl.utils.ProfileFeatureRouter
+import com.example.feature.profile.api.utils.ProfileFeatureRouter
 import com.itis.common.di.viewmodel.ViewModelKey
 import com.itis.common.di.viewmodel.ViewModelModule
 import com.itis.common.utils.CityFormatter

@@ -11,7 +11,7 @@ import com.itis.feature.events.impl.R
 import com.bumptech.glide.RequestManager
 import com.itis.feature.events.impl.databinding.ItemEventBinding
 import com.itis.feature.events.impl.presentation.holder.EventsHolder
-import com.itis.feature.events.impl.presentation.model.EventUiModel
+import com.itis.feature.events.api.presentation.model.EventUiModel
 
 class EventsAdapter (
     private val glide: RequestManager,

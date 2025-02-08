@@ -11,7 +11,7 @@ import com.itis.feature.events.impl.domain.usecase.ExistsInFavouritesUseCase
 import com.itis.feature.events.impl.domain.usecase.GetEventInfoUseCase
 import com.itis.feature.events.impl.domain.usecase.SaveToFavouritesUseCase
 import com.itis.feature.events.impl.presentation.screens.event_info.EventInfoViewModel
-import com.itis.feature.events.impl.utils.EventsFeatureRouter
+import com.itis.feature.events.api.utils.EventsFeatureRouter
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap

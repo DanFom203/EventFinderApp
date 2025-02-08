@@ -5,7 +5,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.itis.common.di.FeatureApiHolder
 import com.itis.common.di.FeatureContainer
 import com.itis.common.di.scope.ApplicationScope
-import com.itis.feature.events.impl.utils.EventsFeatureRouter
+import com.itis.feature.events.api.utils.EventsFeatureRouter
 import com.itis.feature.kudago.api.remote.KudagoApi
 import javax.inject.Inject
 

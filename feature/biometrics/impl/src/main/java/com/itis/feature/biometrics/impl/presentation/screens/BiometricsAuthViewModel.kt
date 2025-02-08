@@ -7,7 +7,7 @@ import androidx.biometric.BiometricManager.Authenticators.BIOMETRIC_WEAK
 import androidx.biometric.BiometricManager.Authenticators.DEVICE_CREDENTIAL
 import com.itis.common.base.BaseViewModel
 import com.itis.common.data.storage.PreferencesImpl
-import com.itis.feature.biometrics.impl.utils.BiometricsAuthRouter
+import com.itis.feature.biometrics.api.utils.BiometricsAuthRouter
 
 class BiometricsAuthViewModel(
     private val preferencesImpl: PreferencesImpl,
