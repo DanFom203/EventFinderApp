@@ -34,7 +34,7 @@ android {
 }
 
 dependencies {
-    api(project(":common"))
+    implementation(project(":common"))
     //retrofit2-converter-gson
     implementation(libs.retrofit2.converter.gson)
 

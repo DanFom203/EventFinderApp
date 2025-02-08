@@ -40,8 +40,8 @@ android {
 }
 
 dependencies {
-    api(project(":common"))
-    api(project(":feature:events:api"))
+    implementation(project(":common"))
+    implementation(project(":feature:events:api"))
     //dagger2
     implementation(libs.dagger)
     "kapt"(libs.dagger.compiler)

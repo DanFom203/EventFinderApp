@@ -38,9 +38,9 @@ android {
 }
 
 dependencies {
-    api(project(":common"))
-    api(project(":feature:events:api"))
-    api(project(":feature:kudago:api"))
+    implementation(project(":common"))
+    implementation(project(":feature:events:api"))
+    implementation(project(":feature:kudago:api"))
     //dagger2
     implementation(libs.dagger)
     "kapt"(libs.dagger.compiler)
@@ -59,6 +59,9 @@ dependencies {
     implementation(libs.material)
 
     testImplementation(libs.junit)
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlin.test.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
